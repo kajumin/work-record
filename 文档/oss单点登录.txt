@@ -1,0 +1,23 @@
+vue vue-router element-ui axios  cross-env
+
+1.环境变量   .env.development  .env.production 
+   VUE_APP_BASE_URL = 'http://oss-gateway.api.dev.feibaos.cn/oss'    接口调用地址
+   VUE_APP_ENTER_BASE_URL = 'http://gateway.api.dev.feibaos.cn'     接口验证域名和应用来源
+
+2.路由相关
+   测试地址: http://oss.login.dev.feibaos.cn/
+   路由全局前置守卫: 
+   (1)白名单  whiteName 
+   (2)to.query.logout  退出登录逻辑  调用接口  然后回到登录页(带上参数)
+   (3)验证是否携带redirect   app_type应用来源
+       应用来源为1, 则不需要验证, 否则需要验证域名和应用来源  之后验证进入路由名是否为Login和Register
+   (4)不满足以上三个条件之一则跳转到404页面
+
+
+3.登录页面Login.vue
+  (1) created中  如果action为logout, 提示退出登录消息
+  (2) 保存redirect 和 app_type  得到domain域名,  为了之后登录成功之后的跳转
+
+4.注册页面Login.vue
+  (1) created中  如果action为logout, 提示退出登录消息
+  (2) 保存redirect 和 app_type  得到domain域名,  为了之后登录成功之后的跳转

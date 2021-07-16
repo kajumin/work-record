@@ -1,0 +1,72 @@
+项目布局: 
+上(70)下(flex: 1)
+下-> 左(240px)右(margin: 70px 0 0 240px)
+
+===============我的专利 admin/patent/my-patent/list
+专利列表getPatent  getCount   getCountByLaw(统计 有效 无效)
+分页功能currentChange  pageParams
+筛选 tabClick  赋值给pageParams  下拉筛选代理机构agencyChange 赋值给pageParams
+搜索 handleSearch(输入查询条件)
+复选框 handleSelectionChange  -> 添加备注信息 handleClickRmk  单个和多个
+更新我的专利信息  handleUpdatePatent
+导出专利信息  handleExport
+添加专利  验证规则  hover清除验证结果 
+
+==============专利审查监控
+分页导航
+批量备注
+
+===============缴费监控
+分页导航
+搜索
+提醒日期筛选
+===============知识产权质押融资
+列表
+跳转列表
+===============知识产权维权
+人物详情
+提交咨询
+列表跳转
+
+===========复用代码
+handleDialogClose(data, dialogKey) {
+      for (const key in data) {
+        if (data[key] === 'number') {
+          data[key] = 0
+        } else if (data[key] === 'boolean') {
+          data[key] = false
+        } else if (Array.isArray(data[key])) {
+          data[key] = ['']
+        } else {
+          data[key] = ''
+        }
+      }
+      dialogKey && (this[dialogKey] = false)
+    },
+
+======================================
+项目理解
+x-app-source-type应用来源  1普通应用(需要验证域名和应用来源)  2.开放平台前台  3.开放平台后台
+开放平台前台用户: 创建应用 -> 应用类型(应用类型管理) +应用类型id(应用类型管理)
+
+
+获取应用详情: id(app_id应用)  appInfo   app_type_id应用类型  tatent_id租户id
+获取用户详情: id(用户id) app_id
+开放平台前台  注册用户  购买添加应用
+开放平台后台  管理权限菜单  查看api接口
+app_type_id应用类型id
+======================开发平台后台管理
+jian
+===========配置管理
+=======配置项
+getData getCount
+action: add | edit 
+dialogFormVisible
+formRules: {}
+
+点击添加|修改   修改赋值表单  修改action值
+关闭弹窗  清除校验信息  修改时清除表单数据
+添加|修改完成   添加通过resetFields重置  修改通过关闭弹窗清除数据
+
+=====================vue知识点
+(1)组件名不能跟 html元素同名

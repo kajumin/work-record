@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    
+    new Promise((resolve, reject) => {
+      resolve(1)
+    })
+    .then(res => {
+      console.log(res)
+      return 2
+    })
+    .then(res => {
+      console.log(res)
+      return 3
+    })
+    .then(res => {
+      console.log(res)
+      return 4
+    })
+    .then(res => {
+      console.log(res)
+      return 5
+    })
+    .then(res => {
+      console.log(res)
+      return 6
+    })
+
+    function getPromise() {
+      return new Promise(resolve=>{
+        resolve('11')
+      })
+    }
+    async function getData() {
+      getPromise()
+      console.log('执行完函数调用')
+      let res = await getPromise()
+      console.log(res)
+      let res2 = await getPromise()
+      console.log(res2)
+    }
+    getData()
+
+  </script>
+</body>
+</html>

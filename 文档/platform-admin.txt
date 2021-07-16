@@ -1,0 +1,10 @@
+1.路由切换nprogress  和  请求loading显示(svg图片 svg雪碧图)
+2. 配置开发生产测试请求地址BASE_URL
+   process.env: {NODE_ENV: 'development', BASE_URL: '/', MODE: 'dev', LOGIN_URL: '', BASE_API: ''}
+作用: 可以使得项目文件变少, 又能区分环境选择指定url
+
+=============form
+this.refs[fromName].resetFields()   注意要使用prop
+
+info详细信息 
+list列表信息

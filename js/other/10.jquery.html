@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div class="box">点击我</div>
+  <div class="box2"></div>
+  <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+  <script>
+    var arr = [
+      {
+        id: 1,
+        title: 'name',
+        src: 'http://baidu.com'
+      },
+      {
+        id: 2,
+        title: 'name2',
+        src: 'http://baidu.com'
+      }
+    ]
+
+    ;$(function(){
+      $('.box').click(function() {
+        console.log('click')
+        var fg = document.createDocumentFragment();
+        console.log(fg)
+        $.each(arr, function(index, item) {
+          var a = document.createElement('a')
+          a.src = item.src
+          a.textContent = item.title
+          fg.appendChild(a)
+        })
+        $('.box2').html(fg)      
+      })
+    })
+  </script>
+</body>
+</html>

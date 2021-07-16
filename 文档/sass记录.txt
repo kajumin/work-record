@@ -1,0 +1,242 @@
+按钮: 通过全局样式small(82)  medium(130) w130 w160
+
+表格缩进: 
+(1)member-management   padding
+(2)其他  el-tabs__content  通用样式
+
+tabs缩进: 
+(1)account-security 通用样式
+
+tabs中的el-tabs__header: 
+(1)margin-bottom: 20px;  通用样式
+
+table中的工具栏
+(1)mgb20 共用样式
+
+==============2021.4.21修改样式
+el-select下拉框 默认灰色   hover/focus: 黄色
+
+tabs栏居中
+tabs  底线1px
+
+dialog标题18px
+
+分页上一页  下一页加padding值 
+
+证书管理  添加新证书dialog备注在最后
+dialog 增加取消按钮  居中显示
+下载证书  文件格式加png图片
+
+成员管理  编辑按钮 直接使用蓝色文字
+
+修改table头部字体的font-weight: normal;  修改全选的字体颜色
+
+添加部门dialog  部门名称
+
+证书管理  即将到期证书 提示
+
+搜索图标search
+
+角色管理中的部门管理
+
+===============4.23
+证书管理 添加证书 导出证书 下载证书dialog的按钮问题
+知识产权维权  关闭按钮
+消息提醒  搜索框位置
+账号 改color
+==================4.25
+新增专利申请模块
+单点登录完善
+
+=================4.26
+完善单点登录404问题
+首页顶部制作
+
+
+============5.10
+1.解决base_url更改问题  oss  加/oss
+2.新增全局过滤器  
+(1)Vue.filter(key, filters[key])
+(2)import(@/utils/filters.js)
+3.添加查询条件  if(val ==='all')  delete Object.key else Object.key = value    获取数据
+4.获取分页总数添加条件   params中对象属性值为undefined会被忽略掉
+消息提醒: 
+获取列表  getMsg()
+添加条件获取列表  this.pageParams.msg_type = pane.name
+搜索  this.pageParams.search = this.searchValue
+pane切换   this.pageParams.msg_type = pane.name
+标记选中为已读  this.selectData.map(item => item.id) 
+删除选中   delMsg({ id: ids })
+================5.11
+1.调用证书管理接口  
+   vue-qiniu 新建了一个项目, 用来测试上传七牛功能, 可以使用
+2.开会 15.20-16.30
+
+
+============5.12
+{
+    "user_id": "6096878fcd04f25f5b0dd598",
+    "app_id": "609635f3f2d7f73dc449a09b",
+    "file_src": [
+        "https://photo.feibaos.cn/1620802373045u2839.png"
+    ],
+    "name": "sn",
+    "remind_day": 12,
+    "rmk": "rmk",
+    "sn": "sn102",
+    "type": 4,
+    "validity_time": 1620662400
+}
+问题: axios默认post put请求使用json对象上传
+2.编写检索列表页面
+
+============5.13
+1.检索列表页面和详情页面
+2.处理saas先出现页面再跳转到登录的问题
+3.oss 新增验证域名和应用类型是否存在功能  不存在跳转错误页面  不在login.vue中验证是否存在域名和应用类型
+  处理配置请求地址和新增enter请求地址
+
+=================5.14
+(1)修改pane切换时  page依然是原来的值  导致数据获取不到问题 (证书管理 消息管理)
+(2)oss:  1.跳转到index  2.register  跳转到登录页  3.account_type  
+    4.注册表单验证: 用户名: 4密码  6-18  title:  标题   配置vue.config.js
+(3)chrome浏览器的无痕窗口
+
+=================5.15
+(1)证书更新信息
+    获取appInfo信息
+(2)调用知识产权维权  知识产权质押融资接口
+
+=================5.17
+(1)调用调整专利审查监控
+'sort[annue]': 1
+
+=============5.18
+(1)首页  
+    获取竞对企业信息  缴费提醒完成
+    专利统计  商标统计等接口
+(2)专利检索
+=============5.19
+(1)完成专利检索 (排序  类型  法律状态)
+(2)完成首页(缴费提醒)
+1升序   -1降序 
+==============5.20
+添加 changeAction(点击按钮函数) handleSubmitXXX(调用接口函数)  addXXX(接口)
+修改 changeAction(点击按钮函数) handleSubmitXXX(调用接口函数)  updateXXX(接口)
+删除 handleDel(点击按钮函数)  delXXX(调用接口)
+获取数据  getXXX(methods方法)  getXXXList(接口)
+获取数据总数  getCount(methods方法)  getXXXCount(接口)
+关闭dialog   handleCloseDialog(清除数据方法)
+(1)后台管理系统  配置组(查增改删)  增改还有问题
+    应用类型编辑功能(接口没有)
+(2)sass应用布局改变 头部  侧边栏都是固定定位
+
+==============5.21
+(1) 检索功能完善
+(2) 后台管理系统  配置项完善
+(3) 样式import  common.scss
+
+==============5.24
+(1)修复滚动条问题 修改el-main overflow: auto;
+(2)路由拆分问题
+(3)单点登录文案修改
+(4)专利列表界面  减小页面宽度问题
+(5)专利列表更新专利弹窗
+
+=================5.25
+(1)首页接口调用  差商标
+
+==================5.26
+(1)首页接口调用  商标完成
+(2)侧边栏加上element滚动条
+(3)竞对企业的修改
+(4)添加专利
+===================6.5
+(1)导出列表页面的修改
+(2)我的专利导出
+(3)我要咨询  马上办理
+==================6.10
+(1)头部消息提醒 红圆点
+(2)dialog点击modal不能关闭
+
+==============接口缺的
+专利统计
+专利
+
+证书添加:  name不是必填
+
+开放平台
+开放平台管理系统
+===============7.4
+1.导出标识问题
+===============7.5
+1.解决没有数据时 图片显示
+2.导航栏高亮消失问题
+3.
+===============pdf在线预览问题
+npm i vue-pdf  封装好的pdf.js
+pdf-dist  需要配置
+pdf.js 原始库
+===pdf资源
+http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf
+https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相关政策汇编-2021.pdf
+=====证书图片
+"https://photo.feibaos.cn/1620802373045u2839.png"
+"https://photo.feibaos.cn/1620731345000icon-01.png"
+=======测试地址
+开放平台后台: http://admin.platform.web.dev.feibaos.cn
+开放平台: http://platform.web.dev.feibaos.cn
+saas测试应用:  http://test.enterprise.web.dev.feibaos.cn
+正式环境: http://humofj.enterprise.web.eipchain.cn/    admin  admin888
+=====登录测试
+http://localhost:8082/login?redirect=http%3A%2F%2Flocalhost%3A8080&app_type=2
+http://oss.login.dev.feibaos.cn/?redirect=http://localhost:8081/&&app_type=3
+http://localhost:8082/login?redirect=http%3A%2F%2Fadmin.web.dev.feibaos.cn%2F&acc=2&mmdd=48ba97a6bfe2705d5773669a3aa5bf92&t=10
+=================七牛云
+QINIU_ACCESS_KEY=AySqDg4cCOdjOHqI9VtGoF8Iqca2cCIqoarRVjvf
+QINIU_SECRET_KEY=bTO46bmjKeVgL21phTS89ZhiLO4tvZ6sOXElBskZ
+QINIU_BUCKET=develop
+QINBIU_DOMAIN=https://photo.feibaos.cn/
+===============接口headers
+http://gateway.api.dev.feibaos.cn/
+x-access-token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyMDc5ODEyNiwibmJmIjoxNjIwNzk4MTI2LCJleHAiOjE2MjA4MDUzMjYsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTU2MDcwMDg4NjMiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.Vtwopu_q9Mqk_vVjlh9BRtblCTMcgQgbFdpE0kvg0K4:
+x-app-domain: http:// srcm.business-management
+x-app-source-type: 1
+
+http://localhost:8080/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%83%BD
+http://srcm.business-management/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%83%BD/?expire=1623827738&access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyMzc0MTMzOCwibmJmIjoxNjIzNzQxMzM4LCJleHAiOjE2MjM4Mjc3MzgsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTUyMTc2MTExNzYiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.zCNd9xmeJucloHi80KdEQCPYd6yIwhdgMVN2auH7qvE
+==============账号
+guoliang    123456 app_type(3)  域名不限制
+Hypercide  123456  www.hypercide.com
+admin admin888  app_type(1)  域名srcm.business-management
+开发后台访问地址:  admin.web.dev.feibaos.cn
+getAppInfo
+id(应用编号)  app_id(应用类型id)  tenant_id(租户id)
+type_code = 'enterprise_'
+
+单点登录: 
+(1)键盘输入enter不能登录问题
+sass:
+企业信息问题
+=============platform-admin
+process.env.VUE_APP_HREF = 'http://admin.platform.web.dev.feibaos.cn/'    发送接口或者登陆跳转时  模拟
+
+sku 库存单位
+
+专利检索   到达列表后高亮不存在了
+
+// export default {
+//   computed: {
+//     isActive() {
+//       console.log(this.$route.path)
+//       return this.$route.path
+//     }
+//   }
+// }
+
+1.竞对企业 标签两行显示问题
+2.没有keep-alive
+3.缓存数据
+4.登录一直显示登录中
+5.轮播图文案  改为变量
+http://oss.login.dev.feibaos.cn/login?redirect=http%3A%2F%2Fudzqdp.enterprise.web.dev.feibaos.cn%2Fmanagement%2Fapply&acc=2&mmdd=f5add29280cb4fd26cbee1f348326c3a&t=247362177

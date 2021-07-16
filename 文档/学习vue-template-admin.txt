@@ -1,0 +1,11 @@
+=============vue-count-to
+npm i vue-count-to
+import CountTo from 'vue-count-to'
+Vue.component('count-to', CountTo)
+<count-to :start-val="0" :end-val="100" :duration="1200">
+
+
+====================知识点记录
+1.  父组件传递过来的类  通过计算属性得到
+2.  vuex通过webpack插件导入进来
+    getters能够方便获取值

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    var arr = [{ color: 'red' }, { size: 128 }, { age: 20 } ]
+    var pushData = { spec: [] }
+    arr.forEach(item => {
+      pushData.spec.push(Object.values(item)[0])
+      Object.assign(pushData, item)
+    })
+    pushData.spec = pushData.spec.join(',')
+    console.log(pushData)
+    // { spec: ',red,128' }
+  </script>
+</body>
+</html>

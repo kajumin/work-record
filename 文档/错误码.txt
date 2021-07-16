@@ -1,0 +1,119 @@
+    /** @Message("登录方法不存在") */
+    const ERR_LOGIN_FUNCTION_NOT_EXISTS = 10101;
+
+    /** @Message("用户名或密码错误，请查证后重试喔") */
+    const ERR_LOGIN_PASSWORD = 10102;
+
+    /** @Message("手机号登录失败，请查证后重试喔") */
+    const ERR_LOGIN_MOBILE = 10103;
+
+    /** @Message("验证码有误喔") */
+    const ERR_LOGIN_CODE = 10104;
+
+    /** @Message("短信验证码有误喔") */
+    const ERR_LOGIN_SMS_CODE = 10105;
+
+    /** @Message("表单验证失败") */
+    const ERR_LOGIN_FORM = 10106;
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ /** @Message("ok") */
+    const HTTP_SUCCESS = 200;
+
+    /** @Message("页面不存在") */
+    const HTTP_NOT_FOUND = 404;
+
+    /**
+     * @Message("请求头中应用ID为空")
+     */
+    const HEADER_X_APP_ID_EMPTY = 40001;
+
+    /**
+     * @Message("请求头中域名为空")
+     */
+    const HEADER_X_DOMAIN_EMPTY = 40002;
+
+    /**
+     * @Message("请求头中租户ID为空")
+     */
+    const HEADER_X_TENANT_ID_EMPTY = 40003;
+
+    /**
+     * @Message("请求头中access_token令牌为空")
+     */
+    const HEADER_X_ACCESS_TOKEN_EMPTY = 40004;
+
+    /**
+     * @Message("请求头中refresh_token令牌为空")
+     */
+    const HEADER_X_REFRESH_TOKEN_EMPTY = 40005;
+
+    /**
+     * @Message("缺少请求头")
+     */
+    const HEADER_MISSING = 40006;
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/**
+     * @Message("系统繁忙，请稍后重试")
+     */
+    const ERR_SYSTEM_BUSY = 10001;
+
+    /**
+     * @Message("数据不存在")
+     */
+    const ERR_NO_DATA = 10002;
+
+    /**
+     * @Message("数据已存在")
+     */
+    const ERR_DATA_EXISTS = 10003;
+
+    /**
+     * @Message("表单格式错误")
+     */
+    const ERR_FORM_FORMAT = 10004;
+
+    /**
+     * @Message("无效access_token")
+     */
+    const ERR_INVALID_ACCESS_TOKEN = 10005;
+
+    /**
+     * @Message("无效refresh_token")
+     */
+    const ERR_INVALID_REFRESH_TOKEN = 10006;
+
+    /**
+     * @Message("RPC接口异常")
+     */
+    const ERR_RPC_EXCEPTION = 10007;
+
+    /**
+     * @Message("无权访问")
+     */
+    const ERR_NO_RIGHT = 10008;
+
+    /**
+     * @Message("应用不存在")
+     */
+    const ERR_APP_NOT_EXISTS = 10009;
+
+    /**
+     * @Message("应用已存在")
+     */
+    const ERR_APP_EXISTS = 10010;
+
+    /**
+     * @Message("未登录")
+     */
+    const ERR_NO_LOGIN = 10011;
+
+    /**
+     * @Message("未授权")
+     */
+    const ERR_UNAUTHORIZED = 10012;
+
+    /**
+     * @Message("未知错误，请稍后再试")
+     */
+    const ERR_UNKNOWN = 10099;

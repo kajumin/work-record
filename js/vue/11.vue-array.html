@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+    <div v-for="item in updateForm.menus">{{item}}</div>
+    <div><button @click="handleChange">改变</button></div>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          updateForm: {
+            name: 'bang',
+            menus: ['1', '2']
+          }
+        }
+      },
+      created() {
+        
+      },
+      methods: {
+        handleChange() {
+          this.updateForm.menus = ['4', '5']
+          // this.updateForm.menus[0] = '3'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

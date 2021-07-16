@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <!-- 研究promise执行时机问题
+  return Promise.resolve()
+  return new Promise((resolve)=> resolve())
+  都是慢两个事件循环
+  -->
+  <script>
+    new Promise((resolve, reject) => {
+      resolve(1)
+    })
+    .then(res => {
+      console.log(res)
+      return 2
+    })
+    .then(res => {
+      console.log(res)
+      return 3
+    })
+    .then(res => {
+      console.log(res)
+      return 4
+    })
+    .then(res => {
+      console.log(res)
+      return 5
+    })
+    .then(res => {
+      console.log(res)
+      return 6
+    })
+    function newP() {
+      return new Promise((resolve, reject) => {
+        console.log('newP')
+        resolve('new Promise')
+      })
+    }
+    new Promise((resolve, reject) => {
+      // resolve(newP())
+      // resolve('11')
+    })
+    // .then(res => {
+    //   console.log(res)
+    //   return 2
+    // })
+    // .then(res => {
+    //   console.log(res)
+    //   return 3
+    // })
+    // .then(res => {
+    //   console.log(res)
+    //   return 4
+    // })
+    // .then(res => {
+    //   console.log(res)
+    //   return 5
+    // })
+    new Promise(resolve => {
+      resolve(1)
+    })
+    .then(res => {
+      console.log(res)
+      // 与没有return相比
+      // return p时没有resolve  输出2 
+      // resolve了  输出3
+      // 输出 promise  输出4
+      // return new Promise((resolve) => {
+      //   resolve('return Promise')
+      // })
+      return Promise.resolve('return Promise')
+    })
+    .then(res => {
+      console.log(res)
+      return 3
+    })
+    .then(res => {
+      console.log(res)
+      return 4
+    })
+    .then(res => {
+      console.log(res)
+      return 5
+    })
+
+
+  </script>
+</body>
+</html>
