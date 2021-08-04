@@ -1,0 +1,104 @@
+'space-before-function-paren': 0
+========安装及按需引入  去除滚动行为的警告
+npm i element-ui(2)
+npm i -D babel-plugin-component(1)  @babel/preset-env(7)
+npm install -S default-passive-events
+import 'default-passive-events' // 在main.js引入
+
+babel.config.js
+  presets: ['@vue/cli-plugin-babel/preset', ['@babel/env', { modules: false }]],
+  plugins: [
+    [
+      'component',
+      {
+        libraryName: 'element-ui',
+        styleLibraryName: 'theme-chalk'
+      }
+    ]
+  ]
+
+import { Button } from 'element-ui'
+Vue.component(Button.name, Button)
+==============具体知识点
+=======container容器   vertical horazital
+组件: el-container  header  footer aside
+el-container > header el-container(aside main)  footer
+aside(width: 300px)
+header footer(height: 60px)
+可以让app{ height: 100%; }  实现中间部分占用全屏
+=====layout布局
+基本: el-row el-col  :span 分多少比例(24份)
+使用flex布局: type="flex"  justify
+el-row(type justify align) -> el-col(span(占比))
+=====按钮
+type(text)  plain(朴素) round circle
+disabled
+icon属性 可以设置在右边
+按钮组  el-button-group
+size(mini small medium)
+====表格
+el-table(data default-sort) -> el-table-column(type label prop width(babel的宽) align)  
+====table
+高度
+最大高度
+默认排序属性  default-sort: 绑定一个对象 prop order
+斑马线  stripe     布尔值
+纵向边框 border  布尔值
+尺寸  size
+key关键字  row-key="id"
+====table-column
+type类型  index(同时使用自定义函数)  || select
+sortable   支持排序 布尔值
+el-table-column(formatter格式化数据)
+
+====表单
+el-form( model rules ref label-position(right) ) 
+el-form-item(label size label-width)
+el-input(v-model placeholder) 会自动生成input标签
+
+radio(单选框)(v-model label(选中的value值)) ||  按钮类型单选框(size fill text-color)  || 带边框
+checkbox(多选框) 与radio基本相同  indaterminate状态
+select(选框) 自定义模板 || 分组  || 多选 || 搜索 || 创建选项
+switch(开关) width active-text active-value  active-color
+====按钮
+el-button(size(medium small mini)  type(颜色) round circle disabled icon autofocus)
+====el-menu(router default-active)
+el-menu-item(index(跳转路由))
+i图标
+span(slot="title")
+
+======dialog弹出框
+:visible.sync="payVisible" :center="true"
+slot="title"
+
+================组件封装
+1.样式修改
+   (1)通过手写样式  (2)组件库提供的配置参数项
+2.组件暴露的参数和方法不充分(源码中存在)
+3.可利用的部分功能, 其余功能要自己分装
+4.2+个组件之间的联动, 多合一
+5.完全没有符合的组件
+
+========vue知识点
+'space-before-function-paren': 'off'  //函数前空格
+(1)require('../../assets/images/index/1svg')  数据绑定图片时
+(2)删除一条数据或者新增数据之后需要重新刷新当前页面的需求 解决: 使用provide/inject控制router-view的显隐
+(3)改变query参数, url地址不发生变化 , 需要将query参数深拷贝一份  this.$router.replace({})
+(4)computed计算属性  传递参数 return 一个函数
+(5)滚动到底部有滚动条出现, 是因为el-row有margin-right: -10px,   修复通过外盒子加padding: 0 10px;
+(6)节流在vue中使用  throttle(function() {})  节流函数中也要返回一个function() {}
+
+应用类型管理 -> 添加应用类型 -> 
+应用类型管理 -> 编辑 | 菜单管理 | 删除 | api管理
+     菜单管理  -> 
+     api管理  -> 添加  修改  删除
+
+==================打包优化
+(1) vue  vue-router vuex  cdn加速没有问题
+    配置webpack  
+    (1)chainWebpack: config.plugin('html')   cdn地址
+    (2)configureWebpack  config.externals = externals  不打包到输出文件
+(2) elment-ui 按需引入无法cdn加速
+    全部引入可以cdn加速  注意不要有babel-plugin-component    main.js不要引入样式文件
+(3) axios.js   moment.js 
+(4) echarts.js

@@ -17,3 +17,6 @@ npm rebuild node-sass
 
 ===================gzip压缩问题  版本@5
 Cannot read property ‘tapPromise‘ of undefined
+
+====================98% after emitting CopyPlugin
+import {}  from ''(没有写时)

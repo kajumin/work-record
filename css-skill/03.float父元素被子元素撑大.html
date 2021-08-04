@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .wrap {
+        width: 500px;
+        height: 50px;
+        background-color: red;
+      }
+      .box1 {
+        white-space: nowrap;
+      }
+      .box1 span {
+        float: left;
+        display: inline-block;
+      }
+      .wrap2 {
+        width: 500px;
+        height: 50px;
+        background-color: red;
+      }
+      .box2 {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      .box2 span {
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box1">
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+      </div>
+    </div>
+    <div class="wrap2">
+      <div class="box2">
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+        <span>中国</span>
+      </div>
+    </div>
+  </body>
+</html>

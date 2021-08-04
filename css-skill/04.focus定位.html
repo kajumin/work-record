@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      height: 400px;
+      margin-bottom: 40px;
+      background-color: red;
+    }
+    .box input {
+      /* opacity: 0; */
+    }
+    .nav .nav-item {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 4px;
+      background-color: #adc;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <span class="nav-item" data-index="1">1</span>
+      <span class="nav-item" data-index="2">2</span>
+      <span class="nav-item" data-index="3">3</span>
+      <span class="nav-item" data-index="4">4</span>
+      <span class="nav-item" data-index="5">5</span>
+      <span class="nav-item" data-index="6">6</span>
+    </div>
+    <div class="box">
+      <div>标题1</div>
+      <input type="text" class="input1">
+    </div>
+    <div class="box">
+      <div>标题2</div>
+      <input type="text" class="input2">
+    </div>
+    <div class="box">
+      <div>标题3</div>
+      <input type="text" class="input3">
+    </div>
+    <div class="box">
+      <div>标题4<input type="text" class="input4"></div>
+    </div>
+    <div class="box">
+      <div>标题5</div>
+      <input type="text" class="input5">
+    </div>
+    <div class="box">
+      <div>标题6</div>
+      <input type="text" class="input6">
+    </div>
+    <div class="box">
+      <div>标题7</div>
+      <input type="text" class="input7">
+    </div>
+  </div>
+</body>
+<script>
+  var nav = document.querySelector('.nav')
+  nav.onclick = function(e) {
+    console.log('click')
+    console.log(e.target.dataset['index'])
+    console.log(document.querySelector('.input'+e.target.dataset['index']))
+    document.querySelector('.input'+e.target.dataset['index']).focus()
+    document.documentElement.scrollTop = document.documentElement.scrollTop + 420
+    console.log(document.documentElement.scrollTop)
+  }
+</script>
+</html>

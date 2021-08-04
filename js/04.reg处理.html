@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    var reg = /\{{2}([A-z0-9]+)/g
+    var str = "{{first.DATA}}\n项目名称：{{keyword1.DATA}}\n项目类型：{{keyword2.DATA}}\n项目周期：{{keyword3.DATA}}\n项目金额：{{keyword4.DATA}}\n截止时间：{{keyword5.DATA}}\n{{remark.DATA}}"
+    console.log(str.match(reg))
+  </script>
+</body>
+</html>

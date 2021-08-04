@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      textarea {
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name="desc" id="desc" cols="30" rows="10" placeholder="请输入描述信息"></textarea>
+    <script>
+      // delete 不报错就是true
+      // delete命令会返回false，那就是该属性存在，且不得删除。
+      // delete命令只能删除对象本身的属性，无法删除继承的属性  delete obj.toString()
+      var obj33 = { name: "bang" };
+      console.log(delete obj33.p);
+      console.log(delete obj33.name);
+
+      let obj = { name: "jimmy", age: 18 };
+      let obj1 = obj;
+      obj.name = "chimmy";
+      console.log(obj1);
+      obj1 = {};
+      obj.age = 22;
+
+      console.log(obj1);
+
+      const obj3 = { a: "one", b: "two", a: "three" };
+      console.log(obj3);
+
+      // NaN === NaN // false
+      // typeof NaN // number
+      // typeof null // object
+      // typeof typeof 1 //string
+      // null == undefined //true
+      // ""== 0 //true
+      // 1 + null //1
+      // '1' + null //1null
+      // Number(null) //0
+      // Number("") //true
+      // []==0 //true
+      // []==![] //true
+      // []==false //true
+      // new Boolean(false)=== false //false
+      // new Boolean(false).valueOf() === false //true
+
+      let arr = [1, 2, 3, 4, 5];
+      let arr2 = [1, , 3];
+      // arr.length = 3 => [1,2,3]
+      // delete arr[2] = [1,2,empty,4,5]
+      // arr2.length = 3
+      // arr[10] = 6 arr.length => 11  记住从0开始
+
+      // 函数执行时所在的作用域，是定义时的作用域，而不是调用时所在的作用域。
+
+      Promise.resolve().then(() => {
+        console.log("Promise1");
+        setTimeout(function () {
+          console.log("setTimeout1");
+        }, 10);
+      });
+      setTimeout(() => {
+        console.log("setTimeout2");
+        Promise.resolve().then(() => {
+          console.log("Promise2");
+        });
+      }, 10);
+
+      function A() {}
+      A.prototype.n = 1;
+      var b = new A();
+      // A.prototype = {
+      //   n: 2,
+      //   m: 3,
+      // };
+      var c = new A();
+      console.log(b, b.__proto__)
+      console.log(c, c.__proto__)
+      // console.log(b.n);
+      // console.log(b.m);
+      console.log(c.n);
+      console.log(c.m);
+    </script>
+  </body>
+</html>

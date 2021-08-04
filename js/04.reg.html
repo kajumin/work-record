@@ -42,6 +42,13 @@
     }
     var res2 = transUpperCase('get_element_by_id')
     console.log(res2)
+
+
+    var str1 = '6096878f1890c257e2715ce2:微信消息发送失败:access_token missing rid: 60e563ff-0c59240a-520ed547'
+    var reg = /([A-z0-9]+):(.+)/
+    var resArr = str1.match(reg)
+    console.log(resArr[1])
+    console.log(resArr[2])
   </script>
 </body>
 </html>

@@ -4,8 +4,34 @@ import CountTo from 'vue-count-to'
 Vue.component('count-to', CountTo)
 <count-to :start-val="0" :end-val="100" :duration="1200">
 
+npm i clipboard
+export const handleClipboard = function (text, event) {
+  const clipboard = new Clipboard(event.target, {
+    text: () => text
+  })
+  clipboard.on('success', () => {
+    Message.success('复制成功！')
+    clipboard.destroy()
+  })
+  clipboard.on('error', () => {
+    Message.error('复制失败，请重新尝试！')
+    clipboard.destroy()
+  })
+  clipboard.onClick(event)
+}
+
 
 ====================知识点记录
-1.  父组件传递过来的类  通过计算属性得到
-2.  vuex通过webpack插件导入进来
-    getters能够方便获取值
+1.  父组件传递过来的类名  通过计算属性得到 完整的类名
+2.  vuex通过webpack插件导入进来   require.context
+    getters能够方便获取多模块时state的值
+3. 自定义组件  <wx-dialog slot-scope="scope"></wx-dialog> 会导致不编译
+
+
+cascader
+===============
+// 重置路由  单点登录是不需要考虑这个问题
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}

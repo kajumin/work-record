@@ -1,0 +1,6 @@
+npx vue-cli-service inspect --mode development >> webpack.config.dev.js
+--mode <mode> 指定环境
+--rule <ruleName> 查询指定名字的规则    比如 --rule vue  指定查询vue的规则
+--rules 查询全部规则
+--plugin <pluginName> 查看指令名字的插件   比如 --plugin html  指定查询HtmlWebpackPlugin的配置
+--plugins 查询所有插件

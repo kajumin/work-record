@@ -13,6 +13,7 @@ tabs中的el-tabs__header:
 table中的工具栏
 (1)mgb20 共用样式
 
+console.log(this.updateCompanyDialog = false)   => false
 ==============2021.4.21修改样式
 el-select下拉框 默认灰色   hover/focus: 黄色
 
@@ -185,9 +186,11 @@ https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相�
 "https://photo.feibaos.cn/1620731345000icon-01.png"
 =======测试地址
 开放平台后台: http://admin.platform.web.dev.feibaos.cn
-开放平台: http://platform.web.dev.feibaos.cn
+开放平台: http://platform.web.dev.feibaos.cn      platform.web.eipchain.cn
 saas测试应用:  http://test.enterprise.web.dev.feibaos.cn
+单点登录: http://oss.login.dev.feibaos.cn/login  http://oss.web.eipchain.com/login
 正式环境: http://humofj.enterprise.web.eipchain.cn/    admin  admin888
+http://eirsse.enterprise.web.dev.feibaos.cn/    app_id: 60f80302e48e10250d60c824
 =====登录测试
 http://localhost:8082/login?redirect=http%3A%2F%2Flocalhost%3A8080&app_type=2
 http://oss.login.dev.feibaos.cn/?redirect=http://localhost:8081/&&app_type=3
@@ -220,23 +223,10 @@ sass:
 企业信息问题
 =============platform-admin
 process.env.VUE_APP_HREF = 'http://admin.platform.web.dev.feibaos.cn/'    发送接口或者登陆跳转时  模拟
+dist/js/app.d74cfb03.js 
 
-sku 库存单位
+我要续费的计算专利数量
 
-专利检索   到达列表后高亮不存在了
-
-// export default {
-//   computed: {
-//     isActive() {
-//       console.log(this.$route.path)
-//       return this.$route.path
-//     }
-//   }
-// }
-
-1.竞对企业 标签两行显示问题
-2.没有keep-alive
-3.缓存数据
-4.登录一直显示登录中
-5.轮播图文案  改为变量
-http://oss.login.dev.feibaos.cn/login?redirect=http%3A%2F%2Fudzqdp.enterprise.web.dev.feibaos.cn%2Fmanagement%2Fapply&acc=2&mmdd=f5add29280cb4fd26cbee1f348326c3a&t=247362177
+成员管理  角色添加后  找不到新增的角色
+年费状态
+http://localhost:8080/patent/list/1?type=1&publish_date=1622908800-1632931200&state_name=%E6%9C%89%E6%9D%83&agency_name_origin=%E6%B7%B1%E5%9C%B3%E5%B8%82%E6%81%92%E7%A8%8B%E5%88%9B%E6%96%B0%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E4%BB%A3%E7%90%86%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8
