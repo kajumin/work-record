@@ -1,0 +1,38 @@
+// 文字颜色
+// text-color-#(df/white/orange/primary/gray)
+// df: $colorBlack #333333 默认颜色
+// gray: $colorGray #666666 灰色
+// grey: $colorGrey #999999;
+// dark-gray: $colorDarkGray #cccccc;
+// white: $colorWhite #ffffff 白色
+
+// primary: $colorPrimary #2988f2; 主题色
+// danger: $colorRed: #ff3a3a;
+// blue: $colorPeacockBlue: #33cfc2;
+// yellow: $colorYellow: #fcf448;
+// green: $colorGreen: #4cd964;
+// orange: $colorOrange #ffb618 橙色
+
+// 属性fonst-size 类名text-(xs/sm/lt/df/md/big/lg/os)
+// xs: 12rpx;
+// sm: 20rpx;
+// lt: 22rpx;
+// df: 24rpx;
+// md: 26rpx;
+// big: 28rpx;
+// lg: 32rpx;
+// os: 38rpx;
+
+// 属性margin 或者 padding
+// 类名margin marign-*(left/right/top/bottom)-*(xs/sm/md/df/lg/os)  padding(类似)
+// xs: 5rpx;
+// sm: 10rpx;
+// md: 15rpx;
+// df: 20rpx;
+// lg: 30rpx;
+// os: 40rpx;
+
+justify-start/end/between/center
+align-start/end/between/center
+self-start/end/between/center
+345 -128 217

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      width: 500px;
+      height: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #eee;
+    }
+    .container .box {
+      flex: 0 0 200px;
+      margin-top: 10px;
+      background-color: red;
+    }
+    .container2 {
+      width: 500px;
+      height: 200px;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background-color: #eee;
+    }
+    .container2 .box {
+      width: 50px;
+      flex: 0 0 100px;
+      margin-top: 10px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    flex-basis: ;  
+    当 flex-direction 为 column 时，主轴为纵轴，此时 flex-basis 与 height 对应
+    flex-basis 的值为理想情况，而在实际情况中可能被压缩
+   -->
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <div class="container2">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>

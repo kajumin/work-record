@@ -1,0 +1,49 @@
+事件修饰符: stop  native
+不支持小程序: prevent  capture self once passive
+
+为兼容各端，事件需使用 @ 的方式绑定，请勿使用小程序端的 bind 和 catch 进行事件绑定；
+也不能在 JS 中使用event.preventDefault()和event.stopPropagation()方法；
+web 对应uni-app事件
+{
+        click: 'tap',
+        touchstart: 'touchstart',
+        touchmove: 'touchmove',
+        touchcancel: 'touchcancel',
+        touchend: 'touchend',
+        tap: 'tap',
+        longtap: 'longtap', //推荐使用longpress代替
+        input: 'input',
+        change: 'change',
+        submit: 'submit',
+        blur: 'blur',
+        focus: 'focus',
+        reset: 'reset',
+        confirm: 'confirm',
+        columnchange: 'columnchange',
+        linechange: 'linechange',
+        error: 'error',
+        scrolltoupper: 'scrolltoupper',
+        scrolltolower: 'scrolltolower',
+        scroll: 'scroll'
+    }
+
+表单组件使用uni-app的
+
+flex
+flex-1
+flex-2
+flex-3
+flex-direction
+flex-wrap
+align-start
+align-end
+align-center
+align-stretch
+self-start
+self-end
+self-stretch
+align-stretch
+justify-center 
+justify-between
+justify-around
+border-box

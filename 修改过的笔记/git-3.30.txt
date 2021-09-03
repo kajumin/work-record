@@ -132,3 +132,5 @@ $ git config --global --unset user.xxx   删除用户
 $ git config --list
 # 查看暂存区的文件
 $ git ls-files
+npm config set registry http://registry.npm.taobao.org/
+npm get registry

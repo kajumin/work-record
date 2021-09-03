@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{msg}}</div>
+      <div>
+        <router-link to="/">home</router-link>
+        <router-link to="/about">about</router-link>
+      </div>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
+    <script src="../../assets/js/vue.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/3.1.2/vue-router.min.js"></script>
+    <script>
+      /*
+        1.进入时created mounted activated  离开时 deactivated   再次进入时 activated
+        2.修改document.title 在activated中修改
+        3.绑定事件在mounted中绑定
+      */
+      var router = new VueRouter({
+        routes: [
+          {
+            path: "/",
+            name: "Home",
+            component: {
+              template: `<div>{{msg}}</div>`,
+              data() {
+                return {
+                  msg: "home",
+                };
+              },
+              created() {
+                console.log("home created");
+              },
+              activated() {
+                console.log("activated");
+                document.title = "home";
+              },
+            },
+          },
+          {
+            path: "/about",
+            name: "About",
+            component: {
+              template: `<div>
+                {{msg}}
+                <input type="text" v-model="msg" ref="input">
+                <textarea v-model="textarea" ref="textarea" @input="handleTextareaInput"></textarea>
+              </div>`,
+              data() {
+                return {
+                  msg: "about",
+                  textarea: ''
+                };
+              },
+              created() {
+                console.log("about created");
+              },
+              beforeMount() {
+                console.log("beforeMount");
+              },
+              mounted() {
+                console.log("mounted");
+                this.$refs.input.oninput = function() {
+                  console.log("input");
+                }
+              },
+              activated() {
+                console.log("activated");
+                document.title = "about";
+              },
+              deactivated() {
+                console.log("deactivated");
+              },
+              methods: {
+                handleInput() {
+                  console.log("input");
+                },
+                handleTextareaInput() {
+                  const col = Math.ceil(this.textarea.length / 11)
+                  const total = col * 11
+                  console.log(col, total, this.textarea.length)
+                  if ((total - this.textarea.length) <= 4) {
+                    console.log('为真')
+                    this.$refs.textarea.style.height = (col + 1) * 16 + 'px';
+                  }
+                }
+              },
+            },
+          },
+        ],
+      });
+      Vue.use(VueRouter);
+      console.log(router);
+      console.log(Vue);
+      var vm = new Vue({
+        el: "#app",
+        data() {
+          return {
+            msg: "内容",
+          };
+        },
+        router,
+      });
+    </script>
+  </body>
+</html>

@@ -20,3 +20,5 @@ Cannot read property ‘tapPromise‘ of undefined
 
 ====================98% after emitting CopyPlugin
 import {}  from ''(没有写时)
+===================mapper parameter must be either an Array or an Object
+mapState等没有写成对象或者数组

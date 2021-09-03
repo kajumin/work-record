@@ -12,10 +12,6 @@
 导出专利信息  handleExport
 添加专利  验证规则  hover清除验证结果 
 
-==============专利审查监控
-分页导航
-批量备注
-
 ===============缴费监控
 分页导航
 搜索
@@ -70,3 +66,17 @@ formRules: {}
 
 =====================vue知识点
 (1)组件名不能跟 html元素同名
+    表单动态组件时, 名字通过computed计算 input- + name
+2.进入时created mounted activated  离开时 deactivated   再次进入时 activated
+   修改document.title 在activated中修改
+
+=====================url保存页面操作
+mixins: [transRoute],  通过mixins导入进来改变地址栏的方法, 通过flag控制是否要重置page=1
+  page使用params参数控制, 其他参数使用query参数
+1.使用一个对象urlQuery来保存参数, 调用接口的时候合并这个对象
+2.参数改变时(如筛选条件), 先将改变的参数保存到urlQuery对象中, 然后再调用mixins方法, 最后调用请求接口函数
+   有时一些参数改变, 需要清空urlQuery对象, 再保存参数进来, 写一个清除参数方法
+3.浏览器刷新时, 在created钩子函数中, 将$route.page保存到请求参数中, 将$route.query对象变量保存每一个值到urlQuery对象中,
+  如有其他地方使用到, 也要处理
+4.对于有缓存, 还存在其他页面跳转到该页面时, 判断参数是否存在, 并且不等于urlQuery对象中的值时则需要重新请求(清除参数),
+  否则主动调用transRoute方法改变地址栏参数 

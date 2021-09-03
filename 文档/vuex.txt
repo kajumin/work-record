@@ -278,11 +278,11 @@ this.$store.getters["b/getNameB"]
 return commit('b/updateNameB', data.firstName, { root: true })  //有namespace:true,时
 return commit('updateName', data.firstName, { root: true })   //没有namespace:true,时,  但是第三个参数还是要有
 
-mutations会自动挂载全局, 使用其他模块的mutations时, 需要在commit时加上第三个参数{root:true}, 
+mutations会自动挂载全局, 使用其他模块的mutations时, 需要在commit时加上第三个参数{ root: true }, 
 如果该模块使用namespaced命名空间的, 第一个参数mutations方法加上命名空间
 
 ========(1)注册新模块
-store.registerModule('c',{ state, getters, mutations, actions })
+store.registerModule('c', { state, getters, mutations, actions } )
 ========(2)解绑一个模块
 store.unregisterModule('c')
 ========(3)watch
@@ -310,3 +310,4 @@ if (module.hot) {
        console.log('my plugin invoked')
    }
 ]
+http://srcm.enterprise.web.dev.feibaos.cn/settings/message-remind/1?search=%E6%8F%90%E9%86%92

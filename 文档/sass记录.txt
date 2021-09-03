@@ -202,16 +202,12 @@ QINIU_BUCKET=develop
 QINBIU_DOMAIN=https://photo.feibaos.cn/
 ===============接口headers
 http://gateway.api.dev.feibaos.cn/
-x-access-token:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyMDc5ODEyNiwibmJmIjoxNjIwNzk4MTI2LCJleHAiOjE2MjA4MDUzMjYsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTU2MDcwMDg4NjMiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.Vtwopu_q9Mqk_vVjlh9BRtblCTMcgQgbFdpE0kvg0K4:
-x-app-domain: http:// srcm.business-management
-x-app-source-type: 1
 
 http://localhost:8080/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%83%BD
 http://srcm.business-management/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%83%BD/?expire=1623827738&access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyMzc0MTMzOCwibmJmIjoxNjIzNzQxMzM4LCJleHAiOjE2MjM4Mjc3MzgsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTUyMTc2MTExNzYiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.zCNd9xmeJucloHi80KdEQCPYd6yIwhdgMVN2auH7qvE
 ==============账号
 guoliang    123456 app_type(3)  域名不限制
 Hypercide  123456  www.hypercide.com
-admin admin888  app_type(1)  域名srcm.business-management
 开发后台访问地址:  admin.web.dev.feibaos.cn
 getAppInfo
 id(应用编号)  app_id(应用类型id)  tenant_id(租户id)
