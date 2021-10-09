@@ -22,3 +22,6 @@ Cannot read property ‘tapPromise‘ of undefined
 import {}  from ''(没有写时)
 ===================mapper parameter must be either an Array or an Object
 mapState等没有写成对象或者数组
+
+==================接口返回 页面不存在时
+可能是get post请求方式不对

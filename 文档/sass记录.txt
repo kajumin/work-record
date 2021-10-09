@@ -178,23 +178,7 @@ pane切换   this.pageParams.msg_type = pane.name
 npm i vue-pdf  封装好的pdf.js
 pdf-dist  需要配置
 pdf.js 原始库
-===pdf资源
-http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf
-https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相关政策汇编-2021.pdf
-=====证书图片
-"https://photo.feibaos.cn/1620802373045u2839.png"
-"https://photo.feibaos.cn/1620731345000icon-01.png"
-=======测试地址
-开放平台后台: http://admin.platform.web.dev.feibaos.cn
-开放平台: http://platform.web.dev.feibaos.cn      platform.web.eipchain.cn
-saas测试应用:  http://test.enterprise.web.dev.feibaos.cn
-单点登录: http://oss.login.dev.feibaos.cn/login  http://oss.web.eipchain.com/login
-正式环境: http://humofj.enterprise.web.eipchain.cn/    admin  admin888
-http://eirsse.enterprise.web.dev.feibaos.cn/    app_id: 60f80302e48e10250d60c824
-=====登录测试
-http://localhost:8082/login?redirect=http%3A%2F%2Flocalhost%3A8080&app_type=2
-http://oss.login.dev.feibaos.cn/?redirect=http://localhost:8081/&&app_type=3
-http://localhost:8082/login?redirect=http%3A%2F%2Fadmin.web.dev.feibaos.cn%2F&acc=2&mmdd=48ba97a6bfe2705d5773669a3aa5bf92&t=10
+
 =================七牛云
 QINIU_ACCESS_KEY=AySqDg4cCOdjOHqI9VtGoF8Iqca2cCIqoarRVjvf
 QINIU_SECRET_KEY=bTO46bmjKeVgL21phTS89ZhiLO4tvZ6sOXElBskZ
@@ -207,7 +191,6 @@ http://localhost:8080/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%8
 http://srcm.business-management/admin/patent/patent-search-result/list?word=%E6%99%BA%E8%83%BD/?expire=1623827738&access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZWZhdWx0XzYwOTY4NzhmMTg5MGMyNTdlMjcxNWNlMiIsImlhdCI6MTYyMzc0MTMzOCwibmJmIjoxNjIzNzQxMzM4LCJleHAiOjE2MjM4Mjc3MzgsImFwcF9pZCI6IjYwOTY4NzhmY2QwNGYyNWY1YjBkZDU5OCIsInVzZXJfaWQiOiI2MDk2ODc4ZjE4OTBjMjU3ZTI3MTVjZTIiLCJ1c2VybmFtZSI6ImFkbWluIiwibW9iaWxlIjoiMTUyMTc2MTExNzYiLCJhY2NvdW50X3R5cGUiOiJhcHBfYWRtaW4iLCJqd3Rfc2NlbmUiOiJkZWZhdWx0In0.zCNd9xmeJucloHi80KdEQCPYd6yIwhdgMVN2auH7qvE
 ==============账号
 guoliang    123456 app_type(3)  域名不限制
-Hypercide  123456  www.hypercide.com
 开发后台访问地址:  admin.web.dev.feibaos.cn
 getAppInfo
 id(应用编号)  app_id(应用类型id)  tenant_id(租户id)

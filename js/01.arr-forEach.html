@@ -8,19 +8,23 @@
 </head>
 <body>
   <!-- 
-    forEach 不能使用i--
+    forEach 使用i--没有作用
    -->
   <script>
     const arr = [1,2,3]
     arr.forEach((item, i) => { 
-      // console.log(item, i)
+      console.log(i, item)
       if (item === 2) {
-        console.log(i)
         arr.splice(i, 1)
         i--
-        console.log(i, item)
       } 
-      console.log(i, item)
+    })
+    
+    const arr2 = [1,2,3]
+    arr2.forEach((item,index) => {
+      setTimeout(() => {
+        console.log(index, item)
+      }, 500)
     })
   </script>
   

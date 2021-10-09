@@ -1,4 +1,5 @@
-事件修饰符: stop  native
+v-once不支持
+事件修饰符: stop  native 支持
 不支持小程序: prevent  capture self once passive
 
 为兼容各端，事件需使用 @ 的方式绑定，请勿使用小程序端的 bind 和 catch 进行事件绑定；

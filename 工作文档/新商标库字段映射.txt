@@ -1,0 +1,80 @@
+ /** @var string */
+    public $id;
+
+    /** @var string 接口商标主键ID (用于查询商标详情及流程) */
+    public $api_tid;
+
+    /** @var array 标题信息集合 */
+    public $title;
+
+    /** @var array 申请信息集合 */
+    public $apply;
+
+    /** @var array 初审信息集合 */
+    public $examine;
+
+    /** @var array 注册信息集合 */
+    public $register;
+
+    /** @var string 尼斯分类 / 国际分类 / 商标大类 */
+    public $nc;
+
+    /** @var int 权利状态 */
+    public $state;
+
+    /** @var string 权利状态中文 */
+    public $state_name;
+
+    /** @var string  1: 普通商标 2: 集体商标 3: 证明商标 4: 服务商标 5: 集体服务商标 6: 团体商标 7: 保证商标 8: 特殊标志 9: 三维商标 10: 全息商标 11: 声音商标 12: 嗅觉商标 */
+    public $type;
+
+    /** @var array 文件集合 */
+    public $file;
+
+    /** @var array 申请人集合 */
+    public $applicants;
+
+    /** @var array 代理人集合 */
+    public $agent;
+
+    /** @var array 认定信息集合 */
+    public $affirm;
+
+    /** @var array 商标服务集合 */
+    public $services;
+
+    /** @var array 商标流程集合 */
+    public $processes;
+
+    /** @var array 商标转让信息集合 */
+    public $transfers;
+
+    /** @var array 商标许可备案流程信息 */
+    public $license_processes;
+
+    /** @var int 是否共有 */
+    public $is_share;
+
+    /** @var int 是否指定颜色 */
+    public $is_color;
+
+    /** @var int 是否驰名商标 */
+    public $is_wkm;
+
+    /** @var int 专用权期限开始日期 */
+    public $own_start_time;
+
+    /** @var int 专用权期限截止日期 */
+    public $own_end_time;
+
+    /** @var int 异议截止时间 */
+    public $dissent_end_time;
+
+    /** @var int 后期指定时间 */
+    public $assign_time;
+
+    /** @var int 国际注册日期 */
+    public $international_register_time;
+
+    /** @var string 备注 */
+    public $comment;

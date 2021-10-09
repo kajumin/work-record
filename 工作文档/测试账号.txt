@@ -1,0 +1,19 @@
+博雅网络游戏开发（深圳）有限公司    //有商标 版权 作品
+
+===pdf资源
+http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf
+https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相关政策汇编-2021.pdf
+=====证书图片
+"https://photo.feibaos.cn/1620802373045u2839.png"
+"https://photo.feibaos.cn/1620731345000icon-01.png"
+=======测试地址
+开放平台后台: http://admin.platform.web.dev.feibaos.cn
+开放平台: http://platform.web.dev.feibaos.cn      platform.web.eipchain.cn
+saas测试应用:  http://test.enterprise.web.dev.feibaos.cn
+单点登录: http://oss.login.dev.feibaos.cn/login  http://oss.web.eipchain.com/login
+正式环境: http://humofj.enterprise.web.eipchain.cn/    admin  admin888
+http://eirsse.enterprise.web.dev.feibaos.cn/    app_id: 60f80302e48e10250d60c824
+=====登录测试
+http://localhost:8082/login?redirect=http%3A%2F%2Flocalhost%3A8080&app_type=2
+http://oss.login.dev.feibaos.cn/?redirect=http://localhost:8081/&&app_type=3
+http://localhost:8082/login?redirect=http%3A%2F%2Fadmin.web.dev.feibaos.cn%2F&acc=2&mmdd=48ba97a6bfe2705d5773669a3aa5bf92&t=10

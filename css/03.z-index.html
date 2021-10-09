@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .box {
+      /* position: relative;
+      z-index: 0; */
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0,0,0,0.2);
+    }
+    .box1 .son {
+      position: relative;
+      z-index: -1;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    普通元素的层叠水平优先由层叠上下文决定，因此，层叠水平的比较只有在当前层叠上下文元素中才有意义.
+    
+    某些情况下z-index确实可以影响层叠水平，但是，只限于定位元素以及flex盒子的孩子元素；而层叠水平所有的元素都存在。
+    
+    层叠上下文和层叠水平是概念，层叠顺序是规则.
+    
+    层叠上下文background-color z-index负值 块级元素 浮动元素 内联元素 z-index:auto;看作z-index:0不依赖z-index的层叠上下文; z-index正值
+    定位元素z-index默认为auto;所以定位元素层叠水平高
+    
+    谁大谁上  后来者居上
+    根层叠上下文  传统层叠上下文
+    
+    
+    1.z-index值不为auto的flex项(父元素display:flex|inline-flex).
+    2.元素的opacity值不是1.
+    3.元素的transform值不是none.
+    4.元素的filter值不是none.
+    5.元素mix-blend-mode值不是normal.
+    6.元素的isolation值是isolate.
+    7.will-change指定的属性值为上面任意一个。
+    8.元素的-webkit-overflow-scrolling设为touch.
+    
+    案例: 
+    .box1 父盒子创建层叠上下文, 子元素就不能定位到背景颜色后面
+  -->
+  
+  <div class="box box1">
+    <div class="son"></div>
+  </div>
+  
+  <div>
+    <!-- 父元素没有创建层叠上下文, 根据z-index数值决定 -->
+    <!-- <div style="position:relative; z-index:auto;">
+        <img src="mm1.jpg" style="position:absolute; z-index:2;">    
+    </div>
+    <div style="position:relative; z-index:auto;">
+        <img src="mm2.jpg" style="position:relative; z-index:1;">    
+    </div> -->
+    
+    <!-- 父元素创建层叠上下文, 优先比较其父级层叠上下文元素的层叠顺序, 后来者居上 -->
+    <!-- <div style="position:relative; z-index:0;">
+        <img src="mm1.jpg" style="position:absolute; z-index:2;">    
+    </div>
+    <div style="position:relative; z-index:0;">
+        <img src="mm2.jpg" style="position:relative; z-index:1;">    
+    </div> -->
+  </div>
+  
+  <div class="css3">
+    <div style="display: flex;">
+      <div class="box box1" style="z-index: 0;">
+        <div class="son"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

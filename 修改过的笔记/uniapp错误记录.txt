@@ -1,0 +1,7 @@
+1.key值绑定错误, 不会在渲染页面时报错,  而会在点击事件时报错
+
+==============组件内不要使用嵌套
+Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors
+
+==============编译不了
+subPackages写错
