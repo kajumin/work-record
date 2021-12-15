@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./flex.css">
     <title></title>
     <style>
+      body { margin: 0; }
       .container {
         overflow: hidden;
         width: 750px;
         height: 667px;
+        margin-bottom: 30px;
         background-color: #f1f1f1;
       }
       .patent-header {
@@ -36,6 +39,36 @@
         height: 10px;
         background-color: red;
       }
+
+      .stat-wrap {
+        height: 300px;
+      }
+      .state-wrap-item {
+        padding: 0 30px;
+        background-color: #fff;
+      }
+      .state-wrap-item-top {
+        padding-bottom: 20px;
+      }
+      .state-wrap-item-top-per {
+        width: 10px;
+        height: 30%;
+      }
+      .state-wrap-item:nth-of-type(1) .state-wrap-item-top-per {
+        background-color: rebeccapurple;
+      }
+      .state-wrap-item:nth-of-type(2) .state-wrap-item-top-per {
+        background-color: hotpink;
+      }
+      .state-wrap-item:nth-of-type(3) .state-wrap-item-top-per {
+        background-color: goldenrod;
+      }
+      .state-wrap-item:nth-of-type(4) .state-wrap-item-top-per {
+        background-color: blueviolet;
+      }
+      .state-wrap-item:nth-of-type(5) .state-wrap-item-top-per {
+        background-color: yellowgreen;
+      }
     </style>
   </head>
   <body>
@@ -58,6 +91,46 @@
           </div>
         </div>
         <div class="patent-header-r"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="flex justify-between stat-wrap">
+        <div class="flex flex-direction text-center state-wrap-item">
+          <div class="state-wrap-item-top flex-1 flex align-end justify-center">
+            <div class="state-wrap-item-top-per"></div>
+          </div>
+          <div>(1)</div>
+          <div>已注册</div>
+        </div>
+        <div class="flex flex-direction text-center state-wrap-item">
+          <div class="state-wrap-item-top flex-1 flex align-end justify-center">
+            <div class="state-wrap-item-top-per"></div>
+          </div>
+          <div>(1)</div>
+          <div>已注册</div>
+        </div>
+        <div class="flex flex-direction text-center state-wrap-item">
+          <div class="state-wrap-item-top flex-1 flex align-end justify-center">
+            <div class="state-wrap-item-top-per"></div>
+          </div>
+          <div>(1)</div>
+          <div>已注册</div>
+        </div>
+        <div class="flex flex-direction text-center state-wrap-item">
+           <div class="state-wrap-item-top flex-1 flex align-end justify-center">
+            <div class="state-wrap-item-top-per"></div>
+          </div>
+          <div>(1)</div>
+          <div>已注册</div>
+        </div>
+        <div class="flex flex-direction text-center state-wrap-item">
+           <div class="state-wrap-item-top flex-1 flex align-end justify-center">
+            <div class="state-wrap-item-top-per"></div>
+          </div>
+          <div>(1)</div>
+          <div>已注册</div>
+        </div>
       </div>
     </div>
   </body>

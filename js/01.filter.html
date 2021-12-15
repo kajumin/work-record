@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- checkoutType保证参数不能为空 -->
+    <script>
+      let checkoutType = () => {
+        throw new Error("参数不能为空")
+      };
+      let findStudentByAge = (arr, age = checkoutType()) => arr.filter((num) => num === age)
+      console.log(findStudentByAge([12,14,15], 12))
+    </script>
+  </body>
+</html>

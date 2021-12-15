@@ -134,3 +134,8 @@ $ git config --list
 $ git ls-files
 npm config set registry http://registry.npm.taobao.org/
 npm get registry
+
+
+
+========================新命令
+git checkout -b dev origin/dev

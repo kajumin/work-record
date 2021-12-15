@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div id="app">
+  </div>
+  <script src="../../assets/js/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      template: `
+        <div>
+          <div :key="index" v-for="(item,index) in arr">
+          {{item.name}} 
+          <input type="text">  
+        </div>
+        <button @click="add">添加</button>
+        </div>
+        `,
+      data() {
+        return {
+          arr: [
+            {
+              info: { id: 1 },
+              name: 'bang'
+            }
+          ],
+          index: 0
+        }
+      },
+      methods: {
+        add() {
+          this.index++
+          this.arr.unshift({
+            info: { id: parseInt(Math.random() * 1000) },
+            name: 'bang' + this.index
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

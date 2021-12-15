@@ -8,12 +8,23 @@ https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相�
 "https://photo.feibaos.cn/1620731345000icon-01.png"
 =======测试地址
 开放平台后台: http://admin.platform.web.dev.feibaos.cn
-开放平台: http://platform.web.dev.feibaos.cn      platform.web.eipchain.cn
-saas测试应用:  http://test.enterprise.web.dev.feibaos.cn
+开放平台pc: http://platform.web.dev.feibaos.cn
+开放平台h5:  platform.h5.dev.feibaos.cn 
+saas pc:  http://test.enterprise.web.dev.feibaos.cn/   http://hysadyy.enterprise.web.dev.feibaos.cn/
+              http://srcm.enterprise.web.dev.feibaos.cn/
+              http://eirsse.enterprise.web.dev.feibaos.cn/    app_id: 60f80302e48e10250d60c824
 单点登录: http://oss.login.dev.feibaos.cn/login  http://oss.web.eipchain.com/login
-正式环境: http://humofj.enterprise.web.eipchain.cn/    admin  admin888
-http://eirsse.enterprise.web.dev.feibaos.cn/    app_id: 60f80302e48e10250d60c824
-=====登录测试
-http://localhost:8082/login?redirect=http%3A%2F%2Flocalhost%3A8080&app_type=2
-http://oss.login.dev.feibaos.cn/?redirect=http://localhost:8081/&&app_type=3
-http://localhost:8082/login?redirect=http%3A%2F%2Fadmin.web.dev.feibaos.cn%2F&acc=2&mmdd=48ba97a6bfe2705d5773669a3aa5bf92&t=10
+================正式地址
+开放平台: platform.web.eipchain.cn  https://www.eipchain.com
+开放平台h5: https://h5.eipchain.com/
+saas pc: http://humofj.enterprise.web.eipchain.cn/    admin  admin888    广西科创空间信息技术有限公司
+开放平台后台:  http://admin.platform.web.eipchain.com/
+
+http://localhost:8080/applet?path=%2Fpages%2Fhome%2Findex&app_type_code=fm
+
+
+===============小程序appid secret
+微信: wxed0f7afdd3e062b8      5a2e7925579ce57cba5aef65a05db14b
+抖音: ttdb5cade144651cb401    c2a1a061a89285fc02214dd29d753db00ec3cc19
+
+res.data => []    res.data.list => []

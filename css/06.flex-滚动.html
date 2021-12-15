@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./flex.css">
+  <title></title>
+  <style>
+  .container {
+    display: flex;
+    width: 300px;
+    padding: 0 30px;
+  }
+  .son1 {
+    overflow-x: auto;
+    max-width: calc(100% - 40px);
+    background-color: #f8f8f8;
+  }
+  .son1-son {
+    width: 40px;
+    background-color: aqua;
+  }
+  .son2 {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="son1 flex-1 flex">
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+      <div class="son1-son">1234</div>
+    </div>
+    <div class="son2 flex-shrink"></div>
+  </div>
+  <script>
+    const sons = document.querySelectorAll('.son1-son')
+    console.log(sons)
+    Array.from(sons).forEach(function(item){
+      console.log(item)
+    })
+    Array.prototype.forEach.call(sons, function(item){
+      console.log(item)
+    })
+    
+    [1,2,3].forEach()
+  </script>
+</body>
+</html>

@@ -10,9 +10,22 @@
   <div id="app">
     <div v-for="item in updateForm.menus">{{item}}</div>
     <div><button @click="handleChange">改变</button></div>
+    <!-- <blog-item></blog-item> -->
   </div>
-  <script src="./vue.js"></script>
+  <script src="../../assets/js/vue.js"></script>
   <script>
+    const item = [
+      {
+        name: '1'
+      },
+      {
+        name: '2'
+      }
+    ]
+    function getTpl() {
+      
+      return '<div title="标题1" :item=item>{{item}}></div>'
+    }
     new Vue({
       el: '#app',
       data() {
@@ -30,7 +43,22 @@
         handleChange() {
           this.updateForm.menus = ['4', '5']
           // this.updateForm.menus[0] = '3'
+          // ['item', 'item1'] => 'item', 'item1'
         }
+      },
+      render(h) {
+        return h('div', getTpl())
+      },
+      components: {
+        // 'blog-item': getTpl()
+        // 'blog-item': {
+        //   data() {
+        //     return {
+        //       item
+        //     }
+        //   },
+        //   template: getTpl()
+        // }
       }
     })
   </script>

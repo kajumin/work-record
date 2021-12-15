@@ -11,11 +11,15 @@
     </div>
     <script src="../../assets/js/vue.js"></script>
     <script>
+      var user = {
+        template: '<div class="user"></div>'
+      }
       new Vue({
         el: "#app",
         template: `<div>
           {{user}}
-          <button @click="handleChange">改变</button>
+          <user ref="user"></user>
+          <button @click="handleChange" ref="btn">改变</button>
         </div>`,
         data() {
           return {
@@ -24,13 +28,20 @@
             },
           };
         },
+        components: {
+          user
+        },
         methods: {
           handleChange() {
+            console.log(this.$refs.user)
+            console.log(this.$refs.user.$el.scrollTop)
+            console.log(this.$refs.btn)
+            console.log(this.$refs.btn.scrollTop)
             console.log('执行')
             // this.user.name = 'joy'
             // this.user.age = 20
             // 赋值新对象也会改变
-            this.user = { name: 123 }
+            // this.user = { name: 123 }
           }
         }
       });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./flex.css">
+  <title></title>
+  <style>
+    html, body, .app {
+      height: 100%;
+    }
+    .container {
+      height: 100%;
+    }
+    .nav {
+      height: 100px;
+      background-color: red;
+    }
+    .list {
+      height: 1500px;
+    }
+    .main-body {
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="container flex flex-direction">
+      <div class="nav"></div>
+      <div class="main-body flex-1">
+        <div class="list">list</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./flex.css">
+  <title></title>
+  <style>
+    html, body, .app {
+      height: 100%;
+    }
+    .container {
+      overflow: auto;
+      height: 100%;
+    }
+    .main-body {
+      height: 1500px;
+      background-color: red;
+    }
+    .par {
+      height: 100px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="container">
+      <div class="main-body">
+        <div class="par">
+          <div class="son">
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+            <p>2123456</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var container = document.querySelector('.container')
+    console.log(container.scrollHeight)
+    console.log(getComputedStyle(container).getPropertyValue('overflow'))
+    var par = document.querySelector('.par')
+    console.log(par.scrollHeight)
+    console.log(getComputedStyle(par).getPropertyValue('overflow'))
+
+    const obj = {
+      a: {
+        arr: []
+      }
+    }
+    console.log(obj.b?.arr2.slice())
+  </script>
+</body>
+</html>

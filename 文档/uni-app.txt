@@ -28,23 +28,34 @@ web 对应uni-app事件
         scroll: 'scroll'
     }
 
-表单组件使用uni-app的
+=================知识点
+pages.js配置优先于page.json, 注意格式, uview-ui使用easycom时报错导致组件没有自动组件
 
-flex
-flex-1
-flex-2
-flex-3
-flex-direction
-flex-wrap
-align-start
-align-end
-align-center
-align-stretch
-self-start
-self-end
-self-stretch
-align-stretch
-justify-center 
-justify-between
-justify-around
-border-box
+======================uni-forms
+1.每个要校验的表单项，不管input还是checkbox，都必须放在<uni-forms-item>组件中，
+   且一个<uni-forms-item>组件只能放置一个表单项。
+2.正则校验 pattern: '^1[3456789]\\d{9}$',  需要用\转义
+
+==================uni-link
+uni-link是一个外部网页超链接组件，在小程序内复制url，在app内打开外部浏览器，在h5端打开新网页
+==================scroll-view
+:scroll-top="scrollTop"  通过它可以滚动回顶部 
+scroll-y="true"  scroll-x="true"
+@scroll="scroll"  滚动时触发
+scroll-left="120" scroll-top="120"   初始就滚动位置
+show-scrollbar="false"  是否出现滚动条
+
+======================字节小程序  子组件包裹盒子width100无效  依然表现出包裹性
+只能设置具体值
+======================获取手机号
+微信小程序可以直接获取
+字节小程序需要权限
+======================获取用户信息
+微信小程序 可以获取  使用button的方式
+字节小程序 可以获取  使用uni.getUserInfo
+
+======================分享
+uni.getProvider({})  app应用通过获取获取服务供应商
+
+
+

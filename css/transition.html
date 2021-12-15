@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      width: 200px;
+      height: 200px;
+      background-color: #f8f8f8;
+    }
+    .box1 {
+      width: 20px;
+      height: 0;
+      transition: height .5s;
+      background-color: red;
+    }
+    .container:hover .box1 {
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+  </div>
+  <script>
+  var a = 10;
+  (function a(){
+    // 'use strict'
+    // IIFE函数名赋值无效, 严格模式报const相同的错误
+    a = 20; 
+    console.log(a)
+  })()
+  function b () {
+    'use strict'
+    // 普通函数 函数名赋值相当于赋值一个全局变量
+    b = 20
+    console.log(b)
+  }
+  b()
+  
+  const c = 12
+  c = 13
+  </script>
+</body>
+</html>

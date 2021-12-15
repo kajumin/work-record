@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+  </head>
+  <body>
+
+    <script>
+      const str = '中国美国中国'
+      const nodes = [
+        {
+          name: 'div',
+          attrs: {
+            class: 'div-class',
+            style: 'line-height: 60px; color: red; text-align:center;'
+          }
+        }
+      ]
+      const regStr = '中国'
+      const reg = new RegExp(regStr, 'g')
+      const arr = str.split(reg)
+      nodes.children = arr.reduce((prev, val) => {
+        const obj = {}
+        if (val === '') {
+          obj.text = regStr
+        } else {
+          obj.text = val
+          obj.class = 'mark'
+        }
+        prev.push(obj)
+        return prev
+      }, [])
+      console.log(nodes)
+    </script>
+  </body>
+</html>
