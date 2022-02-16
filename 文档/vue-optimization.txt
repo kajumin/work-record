@@ -1,0 +1,31 @@
+vue  vue-router vuex  eslint  scss
+
+1.路由懒加载 () => import(/* webpackChunkName: "" */, '')
+2.cdn
+
+(3)scss文件优化问题
+import 变量   编译过后并不存在, 不会影响打包后文件的大小
+%  @mixin    继承和混入  编译后不会影响打包后文件的大小
+import 样式   编译后会增大文件的大小
+
+(4).env.dev  VUE_APP开头的变量会嵌入到项目代码中
+    process.env.VUE_APP_** 访问
+    .env.production.local
+
+(5)拆分runtime  但没有内嵌到html中
+     删除prefetch
+     删除productionSourceMap
+
+(6)有common情况下   user.js请求文件
+   user.js只引用一次  不会被单独打包   所以user.js打包到了user-list.js
+   user.js引用两次  会被单独打包 
+
+(7)vendor normalize.css会被单独打包
+
+(8)sass-resources-loader  不需要每个.vue文件都手动引入scss变量
+  @import '@/styles/variables.scss';
+  不推荐在样式文件中写类名, 只写变量  mixins  %extend-one
+
+
+(9)~@/assets/logo.png   路径前加上~的前缀来避免歧义,  当使用webpack alias 或者 npm依赖文件时
+

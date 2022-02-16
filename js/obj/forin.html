@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <input type="text">
+  <script>
+    // for in 可以使用break;终止遍历
+    const obj = {
+      name: 'bang',
+      age: 20
+    }
+    for(const key in obj) {
+      console.log(key)
+      if (key === 'name') {
+        // break;
+      }
+    }
+  </script>
+</body>
+</html>

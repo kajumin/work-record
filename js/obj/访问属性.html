@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      selector: { a: 1, b: ['b'] },
+      target: [{ b: '2' }]
+    }
+
+    function get(obj, ...selectors) {
+      return selectors.map(item => {
+        return item.replace(/\[([0-9]+)\]/, '.$1').split('.').reduce((prev, value) => {
+          return prev && prev[value]
+        }, obj)
+      })
+    }
+    const res = get(obj, 'selector.a', 'target[0].b', 'selector.b[0]')
+    console.log(res)
+  </script>
+</body>
+
+</html>

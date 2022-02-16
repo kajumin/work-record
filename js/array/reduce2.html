@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <!-- 
+    return num++ //得不到加后的数
+
+    reduce实现: includes slice map 对象求和 异步promise
+   -->
+  <script>
+    var arr = [1, 2, 3, 4, 5, 6]
+    const includes = (ary, val) => ary.reduce((prev, value) => (prev ? prev : value === val), false)
+    console.log(includes(arr, 6))
+    console.log(includes(arr, 7))
+
+    const res2 = arr.reduce((prev, value, index) => (0 < index && (index < 3) ? [...prev, value] : prev), [])
+    console.log(res2)
+
+    const res3 = arr.reduce((prev, value) => [...prev, value * 10], [])
+    console.log(res3)
+
+    const obj = {
+      bang: 12,
+      joyce: 15,
+      kajumin: 18
+    }
+    const res4 = Object.values(obj).reduce((prev, value) => prev + value, 0)
+    console.log(res4)
+
+    function getElementById(id) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(id)
+          resolve(id)
+        }, 1000)
+      })
+    }
+    // arr.reduce(async(prev, value) => {
+    //   await prev
+    //   return getElementById(value)
+    //   // const res = await 
+    //   // console.log(res)
+    // }, Promise.resolve())
+    (new Array(5).fill(1)).reduce(async(prev, value) => {
+      await prev
+      return getElementById(value)
+      // const res = await 
+      // console.log(res)
+    }, Promise.resolve())
+
+    const arr5 = [1, 2, 3, 4, 5, 2, 4, 1, 2, 4, 4, 5, 2, 1]
+    res5 = arr5.reduce((prev, value) => {
+      return value === 4 ? prev++ : prev 
+    }, 0)
+    console.log(res5)
+
+    function outer() {
+      console.log(this)
+      function inner() {
+        console.log(this)
+      }
+      inner()
+    }
+    outer.call({name:'bang'})
+
+  </script>
+</body>
+</html>

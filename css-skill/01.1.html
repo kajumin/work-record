@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    .expand-range {
+      position: relative;
+    }
+
+    .expand-range:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+    }
+
+    /*
+      @mixin expand-range($top: -10px, $right: $top, $bottom: $top, $left: $right, $position: relative) {
+        position: $position;
+        &:after {
+          content: '';
+          position: absolute;
+          top: $top;
+          right: $right;
+          bottom: $bottom;
+          left: $left;
+        }
+      }
+      //使用：.test { @include expand-range($top: -5px, $position: absolute) }*/
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 20px;
+    }
+
+    .box2 {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .box2:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background-color: red;
+    }
+
+    .box3 {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      border: 10px solid #adc;
+      background-color: #adc;
+    }
+
+    .box3:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 10px;
+      background-color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+      1.利用伪元素实现增加可点击区域
+      2.利用伪元素生成背景在文字之下
+      3.利用伪元素生成边框内圆角  效果: 在背景之上文字之下
+        绝对定位定位 大小 百分比相对于padding-box
+      
+        4.clip-path实现圆 椭圆 任意图形
+      
+      5.自适应椭圆
+      6.min-content 高度自适应
+
+      7. box-shadow: inset; 实现多边框而且可以点击
+      8.单侧投影: box-shadow: 0 5px 4px -4px black;
+      9.不规则投影
+      10.滤镜的染色和褪色效果 filter: blur();
+
+      11.透明边框
+      12.多背景
+      
+      13.条纹状
+      14.加载条  4个值才可以
+      15.网格状
+      16.棋盘状
+      17.折角
+      18.波点
+      19.切角
+      20.饼图
+      21.回弹
+     -->
+  <span class="expand-range">点击</span>
+  <div class="box box2">
+    中文
+  </div>
+  <div class="box box3">中国</div>
+  <script>
+    var expand = document.querySelector(".expand-range");
+    expand.onclick = function () {
+      console.log("click");
+    };
+  </script>
+</body>
+
+</html>

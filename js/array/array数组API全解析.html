@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <!-- 
+    1.JavaScript 数组的长度是可变的，你可以随时将它指定为一个非负整数值。
+   -->
+  <script>
+    var arr1 = new Array(2) // 创建数组长度为2的空数组
+    var arr2 = new Array(1, 2) // 创建数组[1, 2]
+    console.log(arr1)
+    console.log(arr2)
+
+    // push 尾部添加 返回数组  unshift 头部添加 返回数组
+    // pop  尾部移除 返回移除数组项 shift 头部移除 返回移除数组项
+
+    // 解构 ,跳过
+    var arr3 = [1, 2, 3, 4, [5, 6]]
+    var [,,,,[, res33]] = arr3
+    console.log(res33)
+    var arr3 = []
+
+    // from 第二个参数是map函数
+    var  arr4 = [1, 2, 3, 4, 5]
+    const res4 = Array.from(arr4, (val) => val * 100)
+    console.log(res4)
+
+    var arr5 = [[1, 2], [3, 4]]
+    const res5 = arr5.flat(1)
+    console.log(res5)
+
+    arr4[Symbol.iterator] = function() {
+      var arr = this
+      var index = 0
+      return {
+        next: function() {
+          if (index >= arr.length) {
+            return { done: true }
+          } else {
+            return { done: false, value: arr[index++] * 10 }
+          }
+        }
+      }
+    }
+    for(const key of arr4) {
+      console.log(key)
+    }
+  </script>
+</body>
+</html>

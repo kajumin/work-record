@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    const arr = [1, 2, 3, 4, 5, 6]
+    // 1. [...arr]
+    // 2. Array.from(arr)
+    // 3. arr.slice()
+    // 4. Object.assign([], arr)
+
+    // 其他方法: map filter forEach for for...of
+    // 4. arr.map(i => i)
+    // 5. arr.filter(() => true)
+    const res = Object.assign([], arr)
+    arr[0] = 3
+    console.log(arr, res, arr === res)
+  </script>
+</body>
+</html>

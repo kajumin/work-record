@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      forof 可以使用break终止循环 
+      修改数组中对象的值
+     -->
+    <script>
+      var arr = [
+        {
+          id: 1,
+          name: "bang",
+        },
+        {
+          id: 2,
+          name: "bang2"
+        },
+        {
+          id: 3,
+          name: "bang3"
+        },
+      ];
+      function fun(id, name) {
+        for (const item of arr) {
+          console.log(item)
+          if (item.id === id) {
+            item.name = name
+            break;
+          }
+        }
+      }
+      fun(1, 'joycechu')
+      console.log(arr)
+    </script>
+  </body>
+</html>

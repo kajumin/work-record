@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box1 {
+      display: flex;
+      font-size: 16px;
+    }
+
+    .box1-son1 {
+      font-size: 16px;
+    }
+
+    .box1-son2 {
+      font-size: 20px;
+    }
+
+    .btn1 {
+      padding: .3em .8em;
+      border: 1px solid #446d88;
+      background: #58a linear-gradient(#77a0bb, #58a);
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em gray;
+      color: white;
+      text-shadow: 0 -.05em .05em #335166;
+      font-size: 125%;
+      line-height: 1.5;
+    }
+
+    .box2 {
+      background-color: pink;
+    }
+
+    .btn2 {
+      padding: .3em .8em;
+      border: 1px solid rgba(0, 0, 0, .1);
+      background: #58a linear-gradient(hsla(0, 0%, 0%, .2),
+          transparent);
+      /* background: #58a linear-gradient(hsla(0, 0%, 100%, .2),
+          transparent); */
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0, 0, 0, .5);
+      color: white;
+      text-shadow: 0 -.05em .05em rgba(0, 0, 0, .5);
+      font-size: 125%;
+      line-height: 1.5;
+    }
+
+    .btn2.cancel {
+      background-color: #c00;
+    }
+    .btn2.cancel:active {
+      background: #58a linear-gradient(hsla(0, 0%, 0%, .2),
+          transparent);
+      background-color: #c00;
+    }
+    .btn2.ok {
+      background-color: #6b0;
+    }
+
+    .btn3 {
+      padding: .3em .8em;
+      border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: .2em;
+      box-shadow: 0 .05em .25em rgba(0, 0, 0, .5);
+      color: white;
+      text-shadow: 0 -.05em .05em rgba(0, 0, 0, .5);
+      font-size: 125%;
+      line-height: 1.5;
+      color: #fff;
+    }
+    .btn3.ok {
+      background-color: #409eff;
+    }
+    .btn3.ok:hover {
+      background: #58a linear-gradient(hsla(0, 0%, 100%, .2),
+          transparent);
+      background-color: #409eff;
+    }
+    .btn3.ok:active {
+      background: #58a linear-gradient(hsla(0, 0%, 0%, .2),
+          transparent);
+      background-color: #409eff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1">
+    <div class="box1-son1">
+      <button class="btn1">按钮</button>
+    </div>
+    <div class="box1-son2">
+      <button class="btn1">按钮</button>
+    </div>
+  </div>
+  <div class="box box1 box2">
+    <div class="box1-son1">
+      <button class="btn2 ok">按钮</button>
+    </div>
+    <div class="box1-son2">
+      <button class="btn2 cancel">按钮</button>
+    </div>
+  </div>
+  <div class="box box1">
+    <div class="box1-son1">
+      <button class="btn3 ok">按钮</button>
+    </div>
+    <div class="box1-son2">
+      <button class="btn3 cancel">按钮</button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    .header {
+      min-height: 50px;
+    }
+    .header .header-box {
+      height: 50px;
+      background-color: #adc;
+    }
+    .content {
+      height: 1000px;
+      background-color: #fff;
+    }
+    .content .num {
+      height: 100px;
+    }
+    .main-body {
+      flex: 1;
+      overflow: auto;
+    }
+    .footer {
+      height: 50px;
+      background-color: #096;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    flex-direction: column; 配合flex:1; 会占据隐藏的空间高度
+   -->
+  <div class="container">
+    <div class="header">
+      <div class="header-box header-box1">123456</div>
+      <div class="header-box header-box2">123456</div>
+      <div class="header-box header-box2 header-box3">123456</div>
+    </div>
+    <div class="main-body">
+      <div class="content">
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+        <div class="num">10</div>
+      </div>
+    </div>
+    <div class="footer">
+      footer
+    </div>
+  </div>
+  <script>
+    var mainBody = document.querySelector('.main-body')
+    var headerBox2 = document.querySelector('.header-box2')
+    var headerBox3 = document.querySelector('.header-box3')
+    mainBody.onscroll = function() {
+      console.log(mainBody.scrollTop)
+      var scrollTop = mainBody.scrollTop
+      if (scrollTop > 150) {
+        headerBox2.style.display = 'none'
+        headerBox3.style.display = 'none'
+      }
+      if (scrollTop < 150) {
+        headerBox2.style.display = 'block'
+        headerBox3.style.display = 'block'
+      }
+    }
+  </script>
+</body>
+</html>

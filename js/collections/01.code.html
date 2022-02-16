@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // 1. 获取文件后缀名 字符串方法  正则方法
+    function getExt(filename) {
+      if (typeof filename == 'string') {
+        var reg = filename.match(/[A-z0-9]+$/)
+        return reg && reg[0]
+        return filename
+          .split('.')
+          .pop()
+          .toLowerCase()
+      } else {
+        throw new Error('filename must be a string type')
+      }
+    }
+    var res1 = getExt('02.01.mp4')
+    // var res11 = getExt()
+    console.log(res1)
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
+    sleep(2000).then(() => {
+      console.log('2000')
+    })
+
+    const dateReg = /^\d{1,4}(-|\/)(\d{1,2})\1\2 (\d{1,2})\:(\d{1,2})\:(\d{1,2})$/
+    console.log(dateReg)
+    const dateStr1 = '2021-10-10 16:16:16'
+    console.log(dateReg.test(dateStr1)) // true
+
+    const reg = /(ab)\1(cd)\1\2\2/
+    console.log(reg.test('ababcdabcdcd'))
+  </script>
+</body>
+
+</html>

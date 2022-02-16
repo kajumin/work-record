@@ -1,0 +1,11 @@
+tag id class *  四个
+后代  相邻后代 兄弟 相邻兄弟
+交集 并集
+:is  :not
+:link  :hover  :active 
+:focus :required :valid :invalid  :checked :disabled :focus-within(内部聚焦元素)  :placeholder-shown
+:nth-child :first-child :last-child  :nth-of-type :first-of-type :last-of-type
+:nth-last-child :nth-last-of-type
+:only-child  :only-of-type :empty
+[attr] [attr=val] [attr*=val] [attr^=val] [attr&=val]
+::before ::after  ::first-line ::first-letter ::placeholder

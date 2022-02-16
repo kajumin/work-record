@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container2 {
+      display: flex;
+      align-items: center;
+      width: 400px;
+      height: 400px;
+      background-color: red;
+    }
+    .container2 img {
+      width: 80px;
+      height: 80px;
+      margin-left: 40px;
+    }
+    .container2 .wrap {
+      flex: 1;
+      flex-basis: 260px;
+      display: flex;
+      flex-direction: column;
+      background-color: #eee;
+    }
+    .container2 .wrap .wrap-box {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .container2 .wrap .wrap-box:first-of-type {
+      margin-top: 30px;
+    }
+    .container2 .wrap .wrap-box:last-of-type {
+      margin-bottom: 30px;
+    }
+    .text-overflow {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    1.flex: 1; 可以占满剩余空间, 但是对于省略号无效, 需要主动设置具体值, 可以是max-width具体值
+   -->
+  <div class="container2">
+    <img src="../images/banner-01.png" alt="">
+    <div class="wrap">
+      <div class="wrap-box">
+        <div class="text-overflow">中国中国中果果股哦国故果果果果果果果果果果果果果果果果</div>
+      </div>
+      <div class="wrap-box">123467946313165467684652</div>
+      <div class="wrap-box">123456</div>
+    </div>
+  </div>
+</body>
+
+</html>

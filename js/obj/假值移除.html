@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+
+    // filter(Boolean)  直接传递一个api当做回调函数
+    const obj = {
+      a: false,
+      b: 0,
+      c: 1,
+      d: 2,
+      e: ''
+    }
+
+    function compactObject(obj) {
+      return Object.keys(obj).reduce((curr, key) => {
+        const value = obj[key]
+        if (value) {
+          curr[key] = value
+        }
+        return curr
+      }, {})
+    }
+    console.log(compactObject(obj))
+
+    const arr = [false, 0, '', 1, '2']
+    function compactObject2(val) {
+      const data = Array.isArray(val) ? val.filter(Boolean) : val 
+      return Object.keys(data).reduce((curr, key) => {
+        const value = data[key]
+        if (value) {
+          curr[key] = value
+        }
+        return curr
+      }, Array.isArray(data) ? [] : {})
+    }
+    console.log(compactObject2(arr))
+
+    const arr2 = [false, 0, '', 1, {
+      a: 0,
+      b: '',
+      c: 1,
+      d: false,
+      e: '3'
+    }]
+    const obj2 = {
+      a: false,
+      b: 0,
+      c: 1,
+      d: 2,
+      e: '',
+      f: [false, 0, '2', '', 3]
+    }
+    function compactObject3(val) {
+      const data = Array.isArray(val) ? val.filter(Boolean) : val 
+      return Object.keys(data).reduce((curr, key) => {
+        const value = data[key]
+        if (value) {
+          curr[key] = typeof value === 'object' ? compactObject3(value) : value
+        }
+        return curr
+      }, Array.isArray(data) ? [] : {})
+    }
+    console.log(compactObject3(obj2))
+    console.log(compactObject3(arr2))
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+    var dataList = [
+      {
+        key: 'aba',
+        children: [
+          {
+            key: 'bcb',
+            value: '1111'
+          },
+          {
+            key: 'cdc',
+            children: [
+              {
+                key: 'ded',
+                value: '2222'
+              },
+              {
+                key: 'fgf',
+                value: '4444'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        key: 'efe',
+        value: '3333'
+      }
+    ]
+    function getParams(list, preventObj) {
+      list.forEach(item => {
+        if (item.children) {
+          preventObj[item.key] = getParams(item.children, {})
+        } else {
+          preventObj[item.key] = item.value
+        }
+      })
+      return preventObj
+    }
+    const res = getParams(dataList, {})
+    console.log(res)
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container1 {
+      display: flex;
+      align-content: flex-start;
+      align-content: flex-end;
+      align-content: center;
+      align-content: space-between;
+      align-content: space-around;
+      align-content: space-evenly;
+      align-content: stretch;
+      flex-wrap: wrap;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+      background-color: #f8f8f8;
+    }
+    .container1 .son {
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      background-color:red;
+    }
+
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      background-color: #f8f8f8;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 
+    align-content: 多根轴线的对齐方式 默认值stretch
+      子项超出父元素宽度时, 换行时会出现;
+      子项没有设置高度时, 会拉伸高度(例如两行显示, 上下都是50%高度, 如果有高度值也是占据50%)
+   -->
+  <div class="container1">
+    <div class="son son1">中国</div>
+    <div class="son son1">中国</div>
+    <div class="son son1">中国</div>
+    <div class="son son1">中国</div>
+  </div>
+  <div class="container2">
+    <div class="son son1">中国中国中国中国中国中国中国中国中国中国中国中国</div>
+  </div>
+</body>
+</html>

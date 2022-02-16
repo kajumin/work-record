@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <title></title>
+  <style>
+    html, body, .fullscreen-layout {
+      height: 100%;
+      overflow: hidden;
+    }
+    .fullscreen-layout {
+      display: flex;
+      flex-direction: column;
+      /* width: 400px; */
+      /* height: 400px; */
+    }
+
+    header {
+      flex-shrink: 0;
+      height: 50px;
+      background-color: #f66;
+    }
+
+    footer {
+      flex-shrink: 0;
+      height: 50px;
+      background-color: #66f;
+    }
+
+    .main {
+      /* overflow: auto; */
+      flex: 1;
+      background-color: #3c9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fullscreen-layout">
+    <header></header>
+    <div class="main">
+        <div style="overflow: hidden;height: 100%;">
+          <div style="overflow: auto;height: 100%;"><div style="height: 800px;"></div></div>
+          
+        </div>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+
+</html>

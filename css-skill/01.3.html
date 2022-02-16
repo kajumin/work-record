@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-bottom: 20px;
+    }
+    .box5 {
+      width: 160px;
+      height: 64px;
+      border-radius: 10rem / 4rem;
+      background-color: red;
+    }
+
+    .box6 {
+      overflow: hidden;
+      width: 100px;
+      height: min-content;
+      background-color: red;
+    }
+
+    .box6 span {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #adc;
+    }
+    .float-l {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="box box5"></div>
+  <div class="box box6">
+    <span class="float-l">我充当图片</span>
+    <div class="float-l">一段文字</div>
+  </div>
+</body>
+</html>

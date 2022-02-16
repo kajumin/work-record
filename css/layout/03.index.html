@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <title></title>
+  <style>
+    .grail-layout-x {
+      padding: 0 100px;
+      /* width: 400px; */
+      height: 200px;
+    }
+
+    .grail-layout-x .left {
+      float: left;
+      margin-left: -100px;
+      width: 100px;
+      height: 100%;
+      background-color: #f66;
+    }
+
+    .grail-layout-x .right {
+      float: right;
+      margin-right: -100px;
+      width: 100px;
+      height: 100%;
+      background-color: #66f;
+    }
+
+    .grail-layout-x .center {
+      height: 100%;
+      background-color: #3c9;
+    }
+
+    .grail-layout-y2 {
+      height: 200px;
+    }
+
+    .grail-layout-y2 .left {
+      float: left;
+      width: 100px;
+      height: 100%;
+      background-color: #f66;
+    }
+
+    .grail-layout-y2 .right {
+      float: right;
+      width: 100px;
+      height: 100%;
+      background-color: #66f;
+    }
+
+    .grail-layout-y2 .center {
+      margin: 0 100px;
+      height: 100%;
+      background-color: #3c9;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    圣杯布局: 
+      父: padding 
+      左: left margin-left: -100px;
+      右: right margin-right: -100px;
+    双飞翼布局:
+
+    相同
+      中间列放首位且声明其宽高占满父节点
+      被挤出的左右列使用float和margin负值将其拉回与中间列处在同一水平线上
+    不同
+      圣杯布局：父节点声明padding为左右列留出空位，将左右列固定在空位上
+      双飞翼布局：中间列插入子节点并声明margin为左右列让出空位，将左右列固定在空位上
+   -->
+  <div class="grail-layout-x">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center"></div>
+  </div>
+
+  <div class="grail-layout-y2" style="margin-top:20px;">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center">
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>

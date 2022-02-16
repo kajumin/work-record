@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      width: 750px;
+      height: 667px;
+      background-color: #eee;
+    }
+    .wrap {
+      display: flex;
+      justify-content: center;
+      background-color: #096;
+    }
+    .box {
+      background-color:red;
+    }
+    .box1 {
+      display: flex;
+      /* width: 400px; */
+      width: 200px;
+      height: 30px;
+    }
+    .box1-son1 {
+      flex: 1 0 130px;
+      background-color: pink;
+    }
+    .box1-son2 {
+      width: 200px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    box1-son2 默认收缩是1  box1:200px时 收缩的是box1-son2  box1:400px时 扩大的是box1-son1(默认是不会扩大的)
+   -->
+  <div class="container">
+    <div class="wrap">
+      <div class="box box1">
+        <div class="box1-son1"></div>
+        <div class="box1-son2"></div>
+      </div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f8f8f8;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      height: 350px;
+      margin-bottom: 20px;
+    }
+    .item {
+      width: 100px;
+      height: 100px;
+    }
+    .item-1 {
+      background-color: #adc;
+    }
+    .item-2 {
+      background-color: hotpink;
+    }
+    .item-3 {
+      background-color: #cde;
+    }
+    .item-one {
+      flex: 1;
+    }
+    .item-one:nth-child(3) {
+      /* 
+        没有设置basis值, 都一样宽度
+        设置了宽度, 第三个元素先占50px宽度
+      */
+      flex-basis: 50px;
+    }
+    .wrapper2 {
+      display: flex;
+      flex-wrap: wrap;
+      width: 500px;
+      margin-bottom: 20px;
+      background-color: red;
+    }
+    .wrapper2 .item-one {
+      flex: 0 0 100%;
+    }
+
+    .wrapper3 {
+      display: flex;
+      width: 500px;
+    }
+    .wrapper3 .item {
+      flex: 1;
+    }
+    .wrapper4 {
+      display: flex;
+      width: 500px;
+    }
+    .wrapper4 .item:nth-child(1) {
+      width: 100px;
+    }
+    .wrapper4 .item:nth-child(2) {
+      /* flex-basis优先级高于width */
+      width: 100px;
+      flex-basis: 200px;
+    }
+    
+    .wrapper-demo {
+      display: flex;
+      width: 500px;
+      margin-bottom: 30px;
+    }
+    .wrapper-demo .item {
+      flex: 1;
+      transition: flex 0.5s ease-out;
+    }
+    .wrapper-demo .item:hover {
+      flex: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    1.flex-grow会影响宽度或高度，具体取决于flex-direction属性
+    项目宽度 = (flex-grow / flex-grow 总个数) * 剩余可用空间 + 初始项目宽度
+      1.没有设置basis是没有初始项目宽度的, 都一样的宽度
+      2.设置basis值, 先占basis宽度
+      3.flex: 0; 防止占用剩余空间
+
+      flex-shrink: 0; 定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+    
+    flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）
+
+    2.flex: 0 0 100%可以让项目占满一行, 其他换行显示
+      flex: 0 1 auto; 默认值
+
+    3.flex: 1; 当flex-basis属性设置为0时，所有flex项目大小会保持一致。
+
+    4.flex 的优先级高于width属性, 当设置width值时
+   -->
+
+  <div class="wrapper wrapper1-1">
+    <div class="item item-1 item-one">css</div>
+    <div class="item item-2">is</div>
+    <div class="item item-3">awesome</div>
+  </div>
+
+  <div class="wrapper2">
+    <div class="item item-1 item-one">css</div>
+    <div class="item item-2">is</div>
+    <div class="item item-3">awesome</div>
+    <div class="item" style="flex:1;background-color:green;">1</div>
+  </div>
+
+  <div>flex: 1;平均分配</div>
+  <div class="wrapper3">
+    <div class="item item-1 item-one">css</div>
+    <div class="item item-2">is</div>
+    <div class="item item-3">awesome</div>
+  </div>
+
+  <div>flex优先级高于width</div>
+  <div class="wrapper4">
+    <div class="item item-1 item-one">css</div>
+    <div class="item item-2">is</div>
+    <div class="item item-3">awesome</div>
+  </div>
+
+  <h3>案例效果</h3>
+  <div class="wrapper-demo">
+    <div class="item item-1">css</div>
+    <div class="item item-2">is</div>
+    <div class="item item-3">awesome</div>
+  </div>
+
+
+  
+</body>
+</html>

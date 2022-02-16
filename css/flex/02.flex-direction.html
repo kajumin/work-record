@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .container {
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: space-evenly;
+      justify-content: space-around;
+      justify-content: space-between;
+      justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: center;
+      align-items: flex-start;
+      align-items: flex-end;
+      align-items: center;
+      align-items: baseline;
+      align-items: stretch;
+      width: 500px;
+      height: 300px;
+      background-color: #f8f8f8;
+    }
+    .son {
+      line-height: 30px;
+      background-color: #fff;
+    }
+    .son2 {
+      width: 300px;
+      height: 60px;
+      align-self: flex-start;
+      align-self: flex-end;
+      align-self: center;
+      align-self: space-around;
+      align-self: space-between;
+      align-self: space-evenly;
+      align-self: stretch;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    flex-direction: 决定主轴的方向 默认row  column
+      同时影响justify-content对齐值, flex占位置
+      flex-direction: colomn; 子项默认占据100%宽度;
+      flex-direction: row; 当父元素有高度时, 子元素默认100%高度
+    
+    justify-content: 主轴的对齐方式 space-evenly space-around space-between
+
+    align-items: 交叉轴的对齐方式 flex-start flex-end center stretch(子元素没有高度或者没有宽度时) baseline
+   -->
+  <div class="container">
+    <div class="son son1">中国</div>
+    <div class="son son2">中国人民共和国</div>
+    <div class="son son3">共和国</div>
+  </div>
+</body>
+</html>

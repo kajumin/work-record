@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      width: 500px;
+    }
+    .section {
+      height: 2000px;
+      background: linear-gradient(to bottom, #adc 0%,#adc 50%,red 50%,red 100%);
+      background-size: 100% 50px;
+    }
+    .section-son {
+      position: sticky;
+      top: 30px;
+      line-height: 40px;
+      background-color: #fff;
+    }
+    .box1 {
+      line-height: 30px;
+      background-color: #fff;
+    }
+    .pos-fixed {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="section">
+      <div style="height:200px;background-color: #adc;padding-top: 50px;overflow: hidden;">
+        <div class="box1">111111</div>
+      </div>
+      <div class="section-son">22222</div>
+    </div>
+  </div>
+</body>
+<script>
+  const box1 = document.querySelector('.box1')
+  document.onscroll = function() {
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    console.log('scrollTop', scrollTop)
+    if (scrollTop >= 70) {
+      box1.classList.add('pos-fixed')
+    } else {
+      box1.classList.remove('pos-fixed')
+    }
+  }
+</script>
+</html>

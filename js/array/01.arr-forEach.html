@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <!-- 
+    forEach 使用i--没有作用 但是会少输出一个值
+    index++ 照样输出所有数组项
+    forEach 内部可以形参闭包
+   -->
+  <script>
+    const arr = [1, 2, 3, 4, 5]
+    arr.forEach((item, index) => {
+      console.log(index, item)
+      if (item === 2) {
+        arr.splice(index, 1)
+        index--
+      }
+    })
+    const arr2 = [1, 2, 3, 4, 5]
+    arr2.forEach((item, index) => {
+      console.log(index, item)
+      index++
+    })
+
+    const arr3 = [1, 2, 3]
+    arr3.forEach((item, index) => {
+      const res = item + 1
+      setTimeout(() => {
+        console.log(index, item, res)
+      }, 500)
+    })
+
+    try {
+      var arr4 = [1, 2, 3, 4]
+      arr4.forEach(function (item, index) {
+        if (item === 3) {
+          throw new Error("LoopTerminates");
+        }
+        console.log(item);
+      })
+    } catch (e) {
+      // console.log(e)
+      // if (e.message !== "LoopTerminates") throw e;
+    }
+  </script>
+
+</body>
+
+</html>

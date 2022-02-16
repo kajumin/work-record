@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .box {
+      display: flex;
+      width: 500px;
+      height: 200px;
+      margin-bottom: 20px;
+      background-color: red;
+    }
+    .box1 {
+      flex-wrap: wrap;
+    }
+    .box1 .son {
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid pink;
+      background-color: green;
+    }
+    .box2 {
+      height: 300px;
+      align-content: flex-end;
+      flex-flow: row wrap;
+    }
+    .box2 .son {
+      width: 100px;
+      height: 100px;
+      border-right: 1px solid pink;
+      background-color: green;
+    }
+    
+  </style>
+</head>
+<body>
+  <!--
+    flex-wrap支持
+    flex-flow支持
+    align-content支持  多根轴线
+   -->
+  <div class="box box1">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+  </div>
+  <div class="box box2">
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+    <div class="son"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <!-- 
+    1.localStorage setItem getItem removeItem clear length
+    2.sessionStorage setItem getItem removeItem clear length
+     sessionStorage (1)刷新页面不会失效
+     (2)相同url不同标签页不能共享 
+   -->
+  <script>
+    const userInfo = { name: 'bang' }
+    localStorage.setItem('userInfo', JSON.stringify(userInfo))
+    console.log(localStorage)
+    console.log(localStorage.length)
+  </script>
+</body>
+</html>

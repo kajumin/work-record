@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      overflow: hidden;
+      width: 750px;
+      height: 667px;
+      background-color: #f1f1f1;
+    }
+
+    .patent-header {
+      display: flex;
+      padding: 0 30px;
+      background-color: #fff;
+    }
+    .patent-header-l,
+    .patent-header-r {
+      display: flex;
+      align-items: center;
+      width: 335px;
+      height: 180px;
+    }
+
+    .patent-header-box {
+      width: 100%;
+      text-align: center;
+    }
+
+    .patent-header-box-top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .percantage {
+      height: 10px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="patent-header">
+      <div class="patent-header-l">
+        <div class="patent-header-box">
+          <div class="patent-header-box-top">
+            <div>
+              <div>28</div>
+              <div>有效专利</div>
+            </div>
+            <div>
+              <div>2</div>
+              <div>无效专利</div>
+            </div>
+          </div>
+
+          <div class="percantage"></div>
+        </div>
+      </div>
+      <div class="patent-header-r"></div>
+    </div>
+  </div>
+</body>
+
+</html>

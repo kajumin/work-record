@@ -1,0 +1,5 @@
+flex-transition:  通过flex-direction justify-content: flex-end; 实现从下到上动画移动
+
+
+1.flex-basis优先级高于width
+2.column-gap:  row-gap  gap

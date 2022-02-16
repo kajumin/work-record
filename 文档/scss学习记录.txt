@@ -1,0 +1,92 @@
+2007年 sass(scss)
+第一种或更新的scss, 兼容css样式表, sass不兼容css样式
+2009年 less
+2010年 stylus
+缺点: 文件体积和复杂度不可控, 增加了调试难度和成本等
+变量 嵌套 混合 函数 运算 控制指令等高级功能
+===========安装
+cnpm i -g node-sass 
+node-sass   a.scss b.css
+node-sass   a.scss -o two/
+node-sass   -w a.scss b.css
+
+=============知识点
+注释  //  /* */  /*! 保留下来 */
+
+变量  !global变成全局
+
+判断类型: type-of($val)
+类型: 数字 字符串 布尔型 空值 颜色 数组 maps
+1.数字: 有单位  无单位  运算问题
+2.字符串: 有引号  无引号
+   unquote quote
+   index 
+   length
+   slice(str, 4)
+3.布尔型: true false
+4.空值: null
+5.数组: 逗号分开  空格分开
+   nth(1) // 获取第几个元素 从1开始
+   index(1px)  查找元素在数组中的索引
+6.map: m1: (key1 val1, key2, val2)
+   map.get(map, key)  get(map, key1, key1-1) //深层  或者map.get(map, key1, key1-1)
+   map.set(map, key, value)   可以深层 map.set(map, key1, key1-1)
+   map.merge(map1, map2)  map-merge  deep-merge
+   map.remove deep-remove
+   map.has-key
+   map.keys获取所有key值   map-keys
+   map.values获取所有values值  map-values
+7.颜色值  #111
+
+算术运算符: + - * /
+纯数字: 有单位则带单位
+纯字符串: 前者有引号则有引号
+*: 都带单位不可行 
+/: 不会四舍五入  精确到小数点后5位
+%: 前后需要有空格
+
+关系运算符: > < >= <=  结果true false
+
+相等运算符: ==  != 结果true false
+数字带单位与不带单位相等   字符串带引号与不带引号相等
+
+布尔运算符: and or not 有空格
+
+颜色运算符: 
+  #111 + #222  #111 * 2
+  rgba + rgba 必须类型一样
+
+优先级: 
+()
+* / % 
++ -
+> < >= <=
+
+==========知识点: 嵌套 extend mixins
+嵌套  &    .#{$val}   !default !global
+
+import: (1).css (2)媒体信息 (3)http (4)url('foo')  都不行
+可以通时引入
+
+====媒体查询
+@media screen and ()
+
+====extend 类名   %extent-one选择器占位符
+
+@at-root  根发出
+@debug   便于调试
+@warn
+@error
+
+=======控制运算符
+三元运算符   if(expression, $value1, $value2)
+
+@if 1 + 1 == 2 {  color: red;  }
+@if expression1 {  } @else if expression2 {  } $else {   }
+
+
+@for $i from 1 through 3  包含end
+@for $i from 1 to 3 不包括end
+
+$while expression { }
+   例如: $while $i > 0 {}

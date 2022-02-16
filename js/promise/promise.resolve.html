@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <!-- 
+    Promise.resolve() 等价与 new Promise(resolve => resolve())
+   -->
+  <script>
+    Promise.resolve(123).then(res => {
+      console.log(res)
+    })
+    new Promise((resolve, reject) => {
+      resolve(456)
+    })
+      .then(res => {
+        console.log(res)
+      })
+
+    Promise.resolve()
+      .then(() => {
+        console.log("then1");
+        new Promise((resolve) => {
+          resolve()
+        })
+        .then(() => {
+          console.log("then1-1");
+          return Promise.resolve(1111);
+        })
+        .then((res) => {
+          console.log("then1-2");
+        });
+      })
+      .then((res) => {
+        console.log("then2");
+      })
+      .then(() => {
+        console.log("then3");
+      })
+      .then(() => {
+        console.log("then4");
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <ul class="box7"></div>
+  <!-- 
+    1.累加 累乘 累除 累减
+    2.字符串拼接
+    3.对象数组中的最大值
+    4.数组中每一个值出现的次数 和出现最大的元素和出现最多的次数
+    5.数组变成对象
+    6.数组生成数组 filter => map可以得到
+    7.生成html结构
+    8._groupBy
+
+    权重求和 score * weight
+   -->
+  <script>
+    function Reverse(arr = []) {
+      return arr.reduceRight((t, v) => (t.push(v), t), []);
+    }
+    // 反转数组
+
+    var arr = [1, 2, 3, 4, 5]
+    var res = arr.reduce((prev, value) => prev + value, 0)
+    console.log(res)
+
+    var arr2 = ['a', 'b', 'c', 'd', 'e']
+    var res2 = arr2.reduce((prev, value) => prev + 'o' + value, '')
+    console.log(res2)
+
+    var arr3 = [{ x: 1 }, { x: 2 }, { x: 3 }]
+    var res3 = arr3.reduce((prev, value) => {
+      return prev > value.x ? prev : value.x
+    }, 0)
+    console.log(res3)
+
+    function getMost(arr4) {
+      let max = null
+      let num = 0
+      var res4 = arr4.reduce((prev, value) => {
+        prev[value] ? prev[value]++ : (prev[value] = 1)
+        if (prev[value] > num) {
+          max = value
+          num = prev[value]
+        }
+        return prev
+      }, {})
+      console.log(res4)
+      return { max, num }
+    }
+    console.log(getMost([4, 2, 3, 5, 4, 8, 7, 4, 5, 6, 4, 4, 1, 2, 3, 5]))
+    console.log([1, 2, 3, 4, 5, 6, 7, 8].reduce((a, i) => Math.max(a, i)))
+    console.log(Math.max.apply([], [8,9,7,6,3]))
+
+    const arr5 = [
+      { name: '专利数量', name_en: 'patentQty', value: '6-15' },
+      { name: '专利数字证书', name_en: 'cpc', value: '无' },
+      { name: '有效期', name_en: 'expireDate', value: '一年' }
+    ]
+    const res5 = arr5.reduce((prev, value) => {
+      prev[value.name_en] = value.value
+      return prev
+    }, {})
+    console.log(res5)
+
+    const arr6 = [
+      {
+        country: '中国',
+        name: 'bang'
+      },
+      {
+        country: '中国',
+        name: 'yimi'
+      },
+      {
+        country: '美国',
+        name: 'joycechu'
+      },
+      {
+        country: '英国',
+        name: 'kajumin'
+      }
+    ]
+    const res6 = arr6.reduce((prev, value) => {
+      if (value.country === '中国') {
+        prev.push(value.name)
+      }
+      return prev
+    }, [])
+    console.log('中国人', res6)
+
+    const box7 = document.querySelector('.box7')
+    const res7 = arr6.reduce((prev, value) => {
+      prev += '<li>' + value.title +'</li>'
+      return prev
+    }, '')
+    box7.innerHTML = res7
+    console.log(res7)
+
+    function _groupBy(arr, options) {
+      return arr.reduce((prev, value) => {
+        const key = typeof options === 'function' ? options(value) : value[options]
+        if (!prev[key]) {
+          prev[key] = []
+        }
+        prev[key].push(value)
+        return prev
+      }, {})
+    }
+    const res8 = _groupBy([4.2,4.1,3.6], Math.floor)
+    const res88 = _groupBy(['one', 'two', 'four', 'fifth'], 'length')
+    const res888 = _groupBy([{num: 1}, {num: 1}, {num: 2}, {num: 3}, {num: 3}], 'num')
+    console.log(res8)
+    console.log(res88)
+    console.log(res888)
+
+  </script>
+</body>
+
+</html>
