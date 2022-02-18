@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./flex.css" />
+    <title></title>
+    <style>
+      .container {
+        width: 300px;
+      }
+      .body {
+        /* 设置一个宽度值就可以了 */
+        width: 50%;
+        background-color: red;
+      }
+      .text {
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="body flex-1">中</div>
+      <div class="body flex-1 body-right">
+        <div class="text">
+          中国中国中国中国中国中国中国中国中国中国中国中国中国中国中国中国中国中国
+        </div>
+      </div>
+    </div>
+    <script>
+      // 请用JS实现Ajax并发请求控制
+      function multiRequest(urls = [], maxNum) {
+        // 请求总数量
+        const len = urls.length;
+        // 根据请求数量创建一个数组来保存请求的结果
+        const result = new Array(len).fill(false);
+        // 当前完成的数量
+        let count = 0;
+
+        return new Promise((resolve, reject) => {
+          // 请求maxNum个
+          while (count < maxNum) {
+            next();
+          }
+          function next() {
+            let current = count++;
+            // 处理边界条件
+            if (current >= len) {
+              // 请求全部完成就将promise置为成功状态, 然后将result作为promise值返回
+              !result.includes(false) && resolve(result);
+              return;
+            }
+            const url = urls[current];
+            console.log(`开始 ${current}`, url, new Date().toLocaleString());
+            new Promise((resolve) => {
+              setTimeout(() => {
+                resolve()
+              }, 1000);
+            }).then((res) => {
+              result[current] = res;
+              console.log(`完成 ${current}`, url, new Date().toLocaleString());
+              // 请求没有全部完成, 就递归
+              if (current < len) {
+                next();
+              }
+            });
+            // fetch(url)
+            //   .then((res) => {
+            //     // 保存请求结果
+            //     result[current] = res;
+            //     console.log(`完成 ${current}`, new Date().toLocaleString());
+            //     // 请求没有全部完成, 就递归
+            //     if (current < len) {
+            //       next();
+            //     }
+            //   })
+            //   .catch((err) => {
+            //     console.log(`结束 ${current}`, new Date().toLocaleString());
+            //     result[current] = err;
+            //     // 请求没有全部完成, 就递归
+            //     if (current < len) {
+            //       next();
+            //     }
+            //   });
+          }
+        });
+      }
+      multiRequest([1,2,3,4,5,6,7,8,9,10], 4)
+    </script>
+  </body>
+</html>

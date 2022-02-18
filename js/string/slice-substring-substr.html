@@ -8,31 +8,36 @@
 </head>
 <body>
   <!-- 
-    slice substring 默认到最后 正值没区别 
-    大值在前substring调换顺序, 可以获取到值(包括负数情况, 但负值当做0处理)
+    相同点: start: 0, end默认到最后
+
+    slice substring 默认到最后 正值没区别
+    1.调换顺序: 大值在前substring调换顺序, 可以获取到值(包括负数情况, 同时负值当做0处理)
+    2.负值处理: substring负值当做0
+
+    substr: 第二个参数为长度
    -->
   <script>
     var str = '123456789'
     console.log('str.slice(0, 2)', str.slice(0, 2)) // 不包括end
-    console.log(str.substring(0, 2)) // 不包括end
+    console.log(str.substring(0)) // 不包括end
     console.log(str.substring(0)) // 默认到最后
-    console.log(str.substr(0, 3)) // 第二个参数是长度
     console.log(str.substr(0)) // 默认全部长度
+    console.log(str.substr(0, 3)) // 第二个参数是长度
 
-    console.log(str.slice(3, 2)) // 
-    console.log(str.substring(3, 2)) // 
+    console.log('str.slice(3, 2):', str.slice(3, 2)) // 
+    console.log('str.substring(3, 2):', str.substring(3, 2)) // 
 
     // 前面slice substring没有区别
-    console.log('str.slice(3, -2)', str.slice(3, -2)) 
-    console.log(str.substring(3, -2)) // 负值在后 会将两则换位置
+    console.log('str.slice(3, -2):', str.slice(3, -2)) 
+    console.log('str.substring(3, -2):', str.substring(3, -2)) // 负值在后 会将两则换位置
 
     // 一个负值在前slice正常处理
     // substring负值在后 换位置, 负值当做0处理
-    console.log('str.slice(-6, 7)', str.slice(-6, 7))
-    console.log('str.slice(-6, -2)', str.slice(-6, -2))
+    console.log('str.slice(-6, 7):', str.slice(-6, 7))
+    console.log('str.slice(-6, -2):', str.slice(-6, -2))
 
-    console.log('str.substring(-6, 7)', str.substring(-6, 7)) // 负值为0
-    console.log('str.substring(-6, -2)', str.substring(-6, -2)) // 当做0处理
+    console.log('str.substring(-6, 7):', str.substring(-6, 7)) // 负值为0
+    console.log('str.substring(-6, -2):', str.substring(-6, -2)) // 当做0处理
 
     // 两个负值slice 小值在前可以截取到 substring截取不到
     console.log(str.slice(-3, -2)) // 两则为负 小值在前 截取到

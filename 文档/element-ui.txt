@@ -37,7 +37,12 @@ icon属性 可以设置在右边
 按钮组  el-button-group
 size(mini small medium)
 ====表格
-el-table(data default-sort) -> el-table-column(type label prop width(babel的宽) align)  
+el-table(data default-sort)
+el-table-column(type label prop width(babel的宽) align)  
+
+
+type: column类型   selection/index/expand  三种
+
 ====table
 高度
 最大高度
@@ -71,6 +76,9 @@ span(slot="title")
 :visible.sync="payVisible" :center="true"
 slot="title"
 
+==========drawer抽屉
+1.方向 2.标题是否显示 3.遮罩层外是否关闭  4.是否显示关闭按钮
+
 ================组件封装
 1.样式修改
    (1)通过手写样式  (2)组件库提供的配置参数项
@@ -81,17 +89,14 @@ slot="title"
 
 ========vue知识点
 'space-before-function-paren': 'off'  //函数前空格
-(1)require('../../assets/images/index/1svg')  数据绑定图片时
+(1)require('../../assets/images/index/1.svg')  数据绑定本地图片路径时
 (2)删除一条数据或者新增数据之后需要重新刷新当前页面的需求 解决: 使用provide/inject控制router-view的显隐
 (3)改变query参数, url地址不发生变化 , 需要将query参数深拷贝一份  this.$router.replace({})
-(4)computed计算属性  传递参数 return 一个函数
+(4)computed计算属性  传递参数 return 一个函数 getText() { return function(text) {return text+'ab'} }
 (5)滚动到底部有滚动条出现, 是因为el-row有margin-right: -10px,   修复通过外盒子加padding: 0 10px;
-(6)节流在vue中使用  throttle(function() {})  节流函数中也要返回一个function() {}
+(6)节流在vue中使用  throttle(function() { return fun })  节流函数中也要返回一个函数
+(7)主动刷新组件 1.通过改变key值  2.this.$forceUpdate()
 
-应用类型管理 -> 添加应用类型 -> 
-应用类型管理 -> 编辑 | 菜单管理 | 删除 | api管理
-     菜单管理  -> 
-     api管理  -> 添加  修改  删除
 
 ==================打包优化
 (1) vue  vue-router vuex  cdn加速没有问题
@@ -102,3 +107,7 @@ slot="title"
     全部引入可以cdn加速  注意不要有babel-plugin-component    main.js不要引入样式文件
 (3) axios.js   moment.js 
 (4) echarts.js
+
+====================源码学习
+1.el-button  定义一个基础按钮  初始化高度颜色背景色边距行高边框字号圆角等
+2.el-button + el-button  多个按钮时间距

@@ -9,16 +9,22 @@
 <body>
   <input type="text">
   <script>
-    // for in 可以使用break;终止遍历
+    //  for in 可以使用breack continue
     const obj = {
       name: 'bang',
-      age: 20
+      age: 20,
+      sex: '男',
+      size: 12,
+      max: 10
     }
     for(const key in obj) {
-      console.log(key)
-      if (key === 'name') {
-        // break;
+      if (key === 'size') {
+        break;
       }
+      if (key === 'age') {
+        continue;
+      }
+      console.log(key)
     }
   </script>
 </body>

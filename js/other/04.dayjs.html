@@ -7,23 +7,27 @@
   <title></title>
 </head>
 <body>
-<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-<script src="https://unpkg.com/dayjs@1.8.21/plugin/relative-time.js"></script>
+<script src="./js/dayjs.min.js"></script>
+<script src="./js/duration.js"></script>
 <script>
-  console.log(relativeTime)
-  console.log(dayjs().format())
-  console.log(dayjs().format(undefined))
-  console.log(dayjs(1234564646))
-  console.log(dayjs().second(30).valueOf())
+  // console.log(dayjs().format())
+  // console.log(dayjs().format(undefined))
+  // console.log(dayjs(1234564646))
+  // console.log(dayjs().second(30).valueOf())
 
-  // 显示
-  console.log(dayjs().format('YYYY年MM月DD日'))
-  console.log(dayjs().format('YYYY-MM-DD'))
-  console.log(dayjs().format('YYYY年MM月DD日 HH时mm分ss秒'))
+  // // 显示
+  // console.log(dayjs().format('YYYY年MM月DD日'))
+  // console.log(dayjs().format('YYYY-MM-DD'))
+  // console.log(dayjs().format('YYYY年MM月DD日 HH时mm分ss秒'))
 
-  // 相对时间
-  dayjs.extend(relativeTime) //插件
-  console.log(dayjs('2020-11-1').fromNow())
+  // // 相对时间
+  dayjs.extend(duration) //插件
+  // console.log(dayjs('2020-11-1').fromNow())
+
+
+  // 时长 给定一个时间戳 返回它的秒数 分钟 小时 月数
+  console.log(dayjs.duration(Date.now() + 864000 * 60 - Date.now()).asDdays())
+  console.log(dayjs.duration(Date.now() + 864000 * 60 - Date.now()).days())
 </script>
 </body>
 </html>

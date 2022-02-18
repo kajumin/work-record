@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!--
+      replace: 正则第一个参数是整个匹配到的字符 第二个开始是分组匹配到的字符
+    -->
+    <script>
+      var reg = /(\d*)(\D*)/g;
+      console.log(
+        "-*-1--1-1*".replace(reg, function (match, $1, $2, i) {
+          if (i === 0) {
+            return $2.slice(0, 1);
+          }
+          return $1;
+        })
+      );
+
+      // var reg2 = /(-1)(-2)/
+      // console.log('-1-2'.replace(reg2, function(match, $1, $2, index) {
+      //   console.log(match)
+      //   console.log($1)
+      //   console.log($2)
+      //   console.log(index)
+      //   return $1 + 'reg'
+      // }))
+
+      function transUnderLine(str) {
+        return str.replace(/[A-Z]{1}/g, function (m1, i) {
+          console.log(m1, i);
+          return "_" + m1.toLowerCase();
+        });
+      }
+      var res = transUnderLine("getElementById");
+      console.log(res);
+
+      function transUpperCase(str) {
+        return str.replace(/_[a-z]{1}/g, function (m1, i) {
+          console.log(m1, i);
+          return m1.slice(1).toUpperCase();
+        });
+      }
+      var res2 = transUpperCase("get_element_by_id");
+      console.log(res2);
+
+      var str1 =
+        "6096878f1890c257e2715ce2:微信消息发送失败:access_token missing rid: 60e563ff-0c59240a-520ed547";
+      var reg = /([A-z0-9]+):(.+)/;
+      var resArr = str1.match(reg);
+      console.log(resArr[1]);
+      console.log(resArr[2]);
+
+      var str = "00110011";
+      // var obj = { 0: 0, 1: 0 };
+      // for (let i = 0; i < str.length; i++) {
+      //   for (let j = i + 1; j < str.length; i++) {
+      //     obj[str]++;
+      //     if (obj[0] === obj[1]) {
+      //     }
+      //   }
+      // }
+      var countBinarySubstrings = function (s) {
+        let i = 0;
+        let pre = 0;
+        let count = 0;
+        let cur = 1;
+        while (i < s.length - 1) {
+          if (s[i] === s[++i]) {
+            cur++;
+          } else {
+            pre = cur;
+            cur = 1;
+          }
+          if (pre >= cur) {
+            count++;
+          }
+        }
+        return count;
+      };
+      console.log(countBinarySubstrings(str));
+
+      var countBinarySubstrings2 = function (s) {
+        let i = (t1 = 1),
+          count = (t2 = 0),
+          pre = s[0];
+        while (i < s.length) {
+          if (s[i] === pre) {
+            t1++;
+          } else {
+            count += Math.min(t1, t2);
+            t2 = t1;
+            t1 = 1;
+            pre = s[i];
+          }
+          i++;
+        }
+        count += Math.min(t1, t2);
+        return count;
+      };
+      console.log(countBinarySubstrings2(str));
+    </script>
+  </body>
+</html>

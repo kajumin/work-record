@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- 
-      forof 可以使用break终止循环 
+      for...of可以使用break; continue;
       修改数组中对象的值
      -->
     <script>
@@ -25,17 +25,24 @@
           id: 3,
           name: "bang3"
         },
+        {
+          id: 4,
+          name: "bang4"
+        },
       ];
       function fun(id, name) {
         for (const item of arr) {
-          console.log(item)
           if (item.id === id) {
             item.name = name
             break;
           }
+          if (item.id === 2) {
+            continue;
+          }
+          console.log(item)
         }
       }
-      fun(1, 'joycechu')
+      fun(3, 'joycechu')
       console.log(arr)
     </script>
   </body>

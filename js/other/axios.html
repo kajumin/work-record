@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <!-- <script src="./js/axios.min.js"></script> -->
+    <script>
+
+      console.time('one')
+      const obj = {
+        count: 0,
+        get() {
+          this.request()
+        },
+        request() {
+          obj.count++
+        }
+      }
+      for(let i = 0; i < 10000; i++) {
+        // obj.get()
+        obj.request()
+      }
+      console.timeEnd('one')
+
+      // const service = axios.create({
+      //   timeout: 2000,
+      // });
+
+      // service.interceptors.response.use((response) => {
+      //   console.log("response", response)
+      // }, (err) => {
+      //   const { config, code, message } = err
+      //   console.log("err", err.config)
+      //   if (code === 'ECONNABORTED' || message === 'Network Error') {
+      //     console.log("请求超时")
+      //   }
+      //   return Promise.reject(err)
+      // })
+      // service.get('http://localhost:3000/axios-timeout').then(res => {
+      //   console.log('res', res)
+      // })
+    </script>
+  </body>
+</html>

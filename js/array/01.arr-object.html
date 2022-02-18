@@ -8,13 +8,21 @@
 </head>
 <body>
   <!-- 
-    数组使用Object.assign 替换相同索引的值
-    无效
+    数组使用Object.assign 替换相同索引的值 且不能浅拷贝
+    Object.assigin 无效
+    slice()
+    concat
+    splice(0) 会破坏其他原数组
   -->
   <script>
     var arr = [1, 2, 3, 7]
-    var arr2 = Object.assign(arr, [4, 5, 6])
+    // var arr2 = Object.assign(arr, [4, 5, 6])
+    // var arr2 = Object.assign([], arr)
+    // var arr2 = arr.slice()
+    // var arr2 = arr.concat()
+    // var arr2 = arr.splice(0)
     arr2[0] = 11
+    console.log(arr === arr2)
     console.log(arr)
     console.log(arr2)
 

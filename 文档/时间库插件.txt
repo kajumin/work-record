@@ -1,0 +1,14 @@
+dayjs  moment
+
+========format
+moment(date).format('YYYY-MM-DD HH:mm:ss')
+dayjs(date).format('YYYY' + arg + 'MM' + arg + 'DD' + '  ' + 'HH' + ':' + 'mm' + ':' + 'ss')
+===============asDays
+Math.ceil(moment.duration(val * 1000 -arg).asDays()) + '天'
+.asDays()  // 剩余多少天  有小数
+.days()  // 剩余天数  不超过31天  没有小数
+asYears  years  
+asMonths months  
+asHours  hours
+
+===================

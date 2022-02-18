@@ -28,3 +28,6 @@ mapState等没有写成对象或者数组
 
 ===================el-tag
 不能遍历undefined值, 可以使用template包裹一层
+
+==================SyntaxError: Unexpected end of JSON input
+JSON.Parse(list || '[]')   不能解析数组  解析数组字符串可以

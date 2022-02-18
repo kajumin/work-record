@@ -8,13 +8,20 @@
   </head>
   <body>
     <!-- <script src="../moment.js"></script> -->
-    <script src="http://cdn.staticfile.org/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.staticfile.org/moment.js/2.13.0/locale/zh-cn.js"></script>
+    <!-- <script src="http://cdn.staticfile.org/moment.js/2.24.0/moment.min.js"></script> -->
+    <script src="./js/moment.min.js"></script>
+    <!-- <script src="https://cdn.staticfile.org/moment.js/2.13.0/locale/zh-cn.js"></script> -->
+    <script src="./js/moment-zh-cn.js"></script>
     <script>
-      console.log(moment(6 * 1000).second());
-      console.log(moment(360 * 1000).minute());
-      console.log(moment(21600 * 1000).hour());
-      const end = Date.now() + 10000000;
+      console.log(moment(Date.now()).second());
+      console.log(moment(Date.now()).minute());
+      console.log(moment(Date.now()).hour());
+      console.log(moment(Date.now()).days()); // 星期几
+      console.log(moment(Date.now()).date()); // 星期几
+      console.log(moment(Date.now()).months());
+      console.log(moment(Date.now()).year());
+      console.log(new Date().getDate())
+      console.log(new Date().getDay()) // 星期几
       // moment.locale("zh-cn", {
       //   months:
       //     "一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split(
@@ -118,10 +125,43 @@
       //   //   doy: 4, // The week that contains Jan 4th is the first week of the year.
       //   // },
       // });
+      const end = Date.now() + 86400000;
+      
       console.log(moment(Date.now()).to(end, true));
+      console.log(moment(Date.now()).to(Date.now() + 86400000 * 60, true));
+      // moment() 参数string number Date(元素Date对象) 数组 对象
+      console.log('format===================参数')
       console.log(moment(0).format('YYYYMMDD'))
       console.log(moment(null).format('YYYYMMDD'))
-      console.log(moment(12000).format('YYYYMMDD'))
+      console.log(moment(Date.now()).format('YYYY-MM-DD'))
+      console.log(moment(new Date('2022-2-1')).format('M月D日'))
+      console.log(moment(154878746789).format('M月D日'))
+
+      console.log('add==================参数(数值, 单位)')
+      console.log(moment().add(7, 'd').format('YYYY-MM-DD'))
+      console.log(Number(moment().add(7, 'd').format('x')) , Date.now())
+
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).asDays());
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).days());
+      console.log(moment.duration(Date.now() + 8640000  - Date.now()).days());
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).asMonths());
+      console.log(moment.duration(Date.now() + 86400000 * 62.1 - Date.now()).months());
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).asYears());
+      console.log(moment.duration(Date.now() + 86400000 * 62.1 - Date.now()).years());
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).asHours());
+      console.log(moment.duration(Date.now() + 86400000 * 60.1 - Date.now()).hours());
+
+      console.log(moment.duration(2105201819 * 1000 - Date.now()).years())
+      console.log(moment.duration(2105201819 * 1000 - Date.now()).months())
+      console.log(moment.duration(2105201819 * 1000 - Date.now()).days())
+      console.log(moment.duration(2105201819 * 1000 - Date.now()).asDays())
+      console.log(moment.duration(2105201819 * 1000 - Date.now()).hours())
+
+      console.log(moment().year())
+      console.log(moment().year(2020))
+      console.log(moment().month() + 1)
+      console.log(moment().date())
+
     </script>
   </body>
 </html>

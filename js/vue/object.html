@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <ul>
+          <li v-for="item in arr" :key="item.id" @click="handleClick(item)">{{item.id}}</li>
+        </ul>
+        <button @click="handleClick">按钮</button>
+        <message :msg="obj.msg" v-if="isShow"></message>
+      </div>
+    </div>
+    <script src="../../assets/js/vue.js"></script>
+    <script>
+      var message = {
+        props: ['msg'],
+        template: `
+          <input type="text" v-model="msg.msg">
+        `
+      }
+      new Vue({
+        el: "#app",
+        components: {
+          message
+        },
+        data() {
+          return {
+            arr: [
+              {
+                id: '1',
+              }
+            ],
+            obj: {
+              msg: {}
+            },
+            isShow: true,
+            span: '<div>123</div>'
+          };
+        },
+        methods: {
+          handleClick(item) {
+            this.isShow = true
+            this.obj.msg = item
+            this.obj.msg.msg = '123'
+            // this.obj.msg = '123'
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

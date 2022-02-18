@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-</head>
-<body>
-  <div id="app">
-    {{name}}
-    <son></son>
-  </div>
-  <script src="./vue.js"></script>
-  <script>
-    const EventBus = new Vue()
-    const Son = {
-      template: `<div>
-        <button @click="handleChange">按钮</button>
-      </div>`,
-      methods: {
-        handleChange() {
-          EventBus.$emit('changeName', 'joycechu')
-        }
-      }
-    }
-    new Vue({
-      el: '#app',
-      data() {
-        return {
-          name: 'bang'
-        }
-      },
-      created() {
-        EventBus.$on('changeName', (val) => {
-          console.log(val)
-          this.name = val
-        })
-      },
-      components: {
-        Son
-      }
-    })
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      {{name}}
+      <son></son>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const EventBus = new Vue();
+      const Son = {
+        template: `<div>
+          <button @click="handleChange">按钮</button>
+        </div>`,
+        created() {
+          console.log("son created")
+          EventBus.$on("changeName", (val) => {
+            console.log(val);
+            this.name = val;
+          });
+        },
+        methods: {
+          handleChange() {
+            EventBus.$emit("changeName", "joycechu");
+          },
+        },
+      };
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            name: "bang",
+          };
+        },
+        created() {
+          console.log("parent created")
+          EventBus.$emit("changeName", "joycechu");
+          // EventBus.$on('changeName', (val) => {
+          //   console.log(val)
+          //   this.name = val
+          // })
+        },
+        components: {
+          Son,
+        },
+      });
+    </script>
+  </body>
 </html>

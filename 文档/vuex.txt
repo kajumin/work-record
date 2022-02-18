@@ -56,7 +56,7 @@ let store =  new Vuex.store({
 });
 
 app.vue中
-{{$store.state.num}}            不这样使用
+{{$store.state.num}}           不这样使用
 {{$store.getters.getNum}}  不这样使用  配合computed使用  getNum() { retrun $store.getters.getNum }
 修改  add(){ 
 	//不建议   异步会少一步  只能同步
@@ -79,7 +79,7 @@ addByNumSync(){
   	counter: 'count'   //couter别名   原名count
      }),
 ...mapState({ 
-	cart: state => state.cart.cart,    //模块化使用对象  getters  mutations  actions同理
+	cart: state => state.cart.cart,    // 模块化使用对象  getters  mutations  actions同理
 	count: state => state.cart.count
 }),
 
@@ -105,7 +105,8 @@ actions: {
    dispatch('user/getUser', { root: true })  //调用其他模块的actions
 
 eg: webpack分析网站
-开发必须踩得坑 1.业务中给state添加属性  新添加的不能显示 defineProperty
+开发必须踩得坑 
+1.业务中给state添加属性  新添加的不能显示 defineProperty
 实例对象vue.$xxx
 构造函数对象Vue.xxx
 Vue.set(state, 'num', name)    手动实现响应式  Vue.set(obj, 'newProp', 123)
