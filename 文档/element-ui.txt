@@ -19,7 +19,16 @@ babel.config.js
 
 import { Button } from 'element-ui'
 Vue.component(Button.name, Button)
+
 ==============具体知识点
+同一个.vue文件, 生成的data-v-hash(8位)是相同的
+===========el-scrollbar
+1.scrollbar 要设置一个高度/宽度
+2.scrollbar__wrap 设置overflow-x/y: hidden;
+===========table
+====tree-table
+1.hasChildren: true, 指定有子节点 有load才会出现箭头
+2.children: 'children'
 =======container容器   vertical horazital
 组件: el-container  header  footer aside
 el-container > header el-container(aside main)  footer

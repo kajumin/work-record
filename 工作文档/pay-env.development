@@ -1,0 +1,9 @@
+# 生成环境域名变量
+NODE_ENV = 'development'
+VUE_APP_BASE_URL = 'https://gateway.api.dev.feibaos.cn'
+VUE_APP_OSS_DOMAIN = 'oss.login.dev.feibaos.cn'
+VUE_APP_APP_ID= '613ea7dfc416ac7d770e9442'
+VUE_APP_DOMAIN = '.web.dev.feibaos.cn'
+VUE_APP_H5_URL = 'https://fee.h5.feibaos.cn/#/'
+VUE_APP_MONITOR_GID = '6139632818f12e554f77a8d3'
+VUE_APP_H5_URL = 'https://fee.h5.feibaos.cn/#/'

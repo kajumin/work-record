@@ -1,0 +1,9 @@
+1.按需加载 component: () => import(/* webpackChunkName: "pageA" */)
+2.路由命名  name: 'Home'
+3.动态路由 /:page  $route.params.page
+4.props三种方式  布尔值 对象  函数
+5.meta 元数据  meta: { title: '' }
+6.命名视图  components: { aaa: PageA, default: Home } <router-view name="aaa"></router-view>
+7.路由守卫 beforeEnter
+8.路由重定向  redirect: { name: 'Home' }
+9.嵌套路由  children: []

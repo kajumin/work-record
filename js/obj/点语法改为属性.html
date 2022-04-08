@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        {
+          key: "company.id",
+          value: "1245",
+        },
+        {
+          key: "company.list.0.name",
+          value: "bang",
+        },
+        {
+          key: "company.list.0.age",
+          value: 20,
+        },
+        {
+          key: "company.list.1.name",
+          value: "bang2",
+        }
+      ];
+      const res = arr.reduce((prev, curr) => {
+        let currentObj = prev;
+        const splitArr = curr.key.split(/\./);
+        for (let i = 0; i < splitArr.length; i++) {
+          if (splitArr[i + 1] && /^\d+$/.test(splitArr[i + 1])) {
+            console.log("true");
+            !currentObj[splitArr[i]] && (currentObj[splitArr[i]] = []);
+            currentObj = currentObj[splitArr[i]];
+          } else if (splitArr[i + 1]) {
+            !currentObj[splitArr[i]] && (currentObj[splitArr[i]] = {});
+            currentObj = currentObj[splitArr[i]];
+          } else {
+            currentObj[splitArr[i]] = curr.value
+          }
+        }
+        console.log(splitArr);
+        return prev;
+      }, {});
+      console.log(res);
+    </script>
+  </body>
+</html>

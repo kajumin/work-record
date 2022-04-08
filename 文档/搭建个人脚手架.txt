@@ -1,0 +1,3 @@
+npm i -g ztjy-cli
+ztjy -V ztjy   --version
+mocker-api

@@ -1,0 +1,4 @@
+https://www.html.cn/doc/underscore/docs/underscore.html
+===========判断是对象
+var type = typeof obj
+return type === 'function' && type === 'object' && !!object

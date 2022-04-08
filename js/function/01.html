@@ -8,15 +8,18 @@
 </head>
 <body>
   <script>
-    var user = {
-      username: 'username',
-      password: '123',
-      code: 132
+    var x = 1
+    function foo(x = 2, y = function() { x = 4; console.log(x, z) }, z = 5) {
+      console.log(x, z)
+      // var x = 3
+      y()
+      // console.log(x)
+      var z = function() {
+        console.log('x', x)
+      }
     }
-    var newObj = Object.assign({}, user, {username: 'asgojaogj', password: 123 })
-    user.username = 'bang'
-    console.log(user)
-    console.log(newObj)
+    foo()
+    console.log(x)
   </script>
 </body>
 </html>

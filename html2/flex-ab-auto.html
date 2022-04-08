@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <style>
+      .app {
+        padding-top: 20px;
+        width: 500px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .container {
+        flex: 1;
+        overflow: auto;
+      }
+      .ab {
+        position: absolute;
+        margin-top: -20px;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-color: bisque;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="ab"></div>
+      <div class="container">
+        <div style="height: 1000px; background-color: red"></div>
+      </div>
+      <div class="app-son" style="height: 50px; background-color: aqua"></div>
+    </div>
+  </body>
+</html>

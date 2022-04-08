@@ -1,0 +1,36 @@
+===============触摸时背景颜色改变方案
+window.addEventListener(
+  "touchstart",
+  function (e) {
+    let dom = e.target;
+    let deep = 3;
+    let hoverclass;
+    while (!hoverclass && deep--) {
+      if (dom.nodeName === "HTML") return;
+      hoverclass = dom.classList.contains("hover-bg");
+      if (hoverclass) {
+        dom.classList.add("hover-bg-active");
+        dom.addEventListener(
+          "touchend",
+          function toggleClass() {
+            dom.classList.remove("hover-bg-active");
+            dom.removeEventListener("touchend", toggleClass);
+          },
+          false
+        );
+      } else {
+        dom = dom.parentNode;
+      }
+    }
+  },
+  false
+);
+===============highlight.js
+import hljs from 'highlight.js/lib/common.js'
+import 'highlight.js/styles/atom-one-dark.css'
+Vue.directive('highlight', function(el) {
+  const blocks = el.querySelectorAll('pre code')
+  blocks.forEach((block) => {
+    hljs.highlightElement(block)
+  })
+})

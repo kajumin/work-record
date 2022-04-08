@@ -1,0 +1,14 @@
+# 开发环境
+# 接口地址
+VUE_APP_BASE_URL='http://gateway.api.dev.feibaos.cn'
+# 跳转登录地址
+VUE_APP_LOGIN_URL='http://oss.h5.dev.feibaos.cn/#/'
+# 域名前缀
+VUE_APP_BASE_LCA='web.dev.feibaos.cn'
+# document.title
+VUE_APP_TITLE='飞豹链开放平台'
+# 商品id
+VUE_APP_GID = '60e7ae170036a159e4a782b7'
+
+# 登录跳转回来地址
+VUE_APP_HREF='http://platform.h5.dev.feibaos.cn'

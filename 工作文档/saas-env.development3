@@ -1,0 +1,19 @@
+# 接口地址
+VUE_APP_BASE_URL = 'http://gateway.api.dev.feibaos.cn'
+# 登录跳转地址
+VUE_APP_LOGIN_URL = 'http://oss.login.dev.feibaos.cn'
+# 小飞豹接口地址
+# VUE_APP_XFB_URL = 'http://test.feibaos.com'
+VUE_APP_XFB_URL = 'https://www.feibaos.com'
+# 默认域名
+VUE_APP_BASE_LCA = '.enterprise.web.dev.feibaos.cn'
+# 商品ID
+VUE_APP_GID = '60e7ae170036a159e4a782b7'
+
+# 开发环境独有的
+# 接口传递的域名(模拟) 真实为url地址中域名
+# VUE_APP_HREF = 'http://devkiekiang.enterprise.web.dev.feibaos.cn'
+# VUE_APP_HREF = 'http://urvtty.enterprise.web.dev.feibaos.cn'
+VUE_APP_HREF = 'http://viotoa.enterprise.web.dev.feibaos.cn'
+# VUE_APP_HREF = 'http://devkiekiang.enterprise.web.dev.feibaos.cn'
+VUE_APP_PLATFORM_TYPE = 'admin'

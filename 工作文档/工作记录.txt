@@ -1,0 +1,33 @@
+1.未授权一直请求  应该是路由拦截问题 saas
+
+1.应用类型规则
+pc  h5  weapp wexin
+
+==========兼容字节小程序
+证书有效期筛选  本来未实现
+scroll-view显示不正常  改变布局
+setRules 表单规则不行  改为正则
+1.专利统计图形显示不出来 待测试
+2.重置按钮样式问题  待测试
+3.证书分享  待测试 通过条件注释
+4.证书编辑  类型显示不出来  待测试  改为基础显示
+5.添加证书  图片问题  待测试  获取权限
+6.时间选择器问题 待测试  退回使用uniapp基础时间选择器
+
+tt.getUserInfo({withCredentials: true})  可以获得私密信息
+
+==============兼容钉钉小程序
+商标检索接口修改
+1.组件上类名class不生效 外层包裹一层view
+2.样式穿透deep需要写在最外层
+3.image组件会编译成背景图的形式  必须要写mode="aspectFit"
+4.支付宝小程序delete put请求方式  传递不了参数   直接放到url上
+5.支付宝小程序预览只支持pdf格式
+6.有些组件绑定时间无效  如input  用一个盒子把组件包裹起来再绑定事件
+7.下拉整个屏幕跟着下拉  "mp-alipay": {"allowsBounceVertical": 'NO' }
+8.input button有border   input有padding  高度比较高(可设height: 100%)
+
+
+
+
+

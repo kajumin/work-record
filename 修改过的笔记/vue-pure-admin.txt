@@ -1,0 +1,16 @@
+=============ts
+():Promise<undefined> => { }
+
+================vite
+import.meta.env  // 类似于process.env
+
+=================配色
+/* 灰色模式 */
+.html-grey {
+  filter: grayscale(100%);
+}
+
+/* 色弱模式 */
+.html-weakness {
+  filter: invert(80%);
+}

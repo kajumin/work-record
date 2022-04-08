@@ -1,0 +1,9 @@
+================vue-virtual-scroll-list
+新旧版本使用不一样  1@  2@
+<VirtualList
+                  class="rules-list-content padding-lr-df"   // 固定高度 overflow: auto;
+                  :data-key="'id'"
+                  :data-sources="comApiList"  // 数据源
+                  :data-component="itemComponent"  // 渲染的列表子组件  放在data上
+                  :estimate-size="56"  // 子组件的高度
+                ></VirtualList>

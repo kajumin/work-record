@@ -1,0 +1,9 @@
+# 开发环境域名变量
+NODE_ENV = 'production'
+VUE_APP_BASE_URL = 'http://gateway.api.dev.feibaos.cn'
+VUE_APP_OSS_DOMAIN = 'oss.login.dev.feibaos.cn'
+VUE_APP_PLATFORM_URL = 'http://platform.web.dev.feibaos.cn'
+# VUE_APP_PLATFORM_URL = 'https://www.eipchain.com'
+
+# 机构版应用类型id
+VUE_APP_AGENT_APP_TYPE_ID = '61d5745774ace65e040bb512'

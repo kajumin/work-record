@@ -206,13 +206,14 @@ MyPlugin.install = function (Vue, options) {
 }
 
 ====================store是否会丢失
-1、hash 路由模式
+1. hash 路由模式
     使用 window.location.href 和 this.$router.push 或 replace
     不管使用这三种方式的哪一种 store 都不会丢
-2、history路由
-this.router.replace    store 不丢
-window.location.href 页面刷新   store 丢
+2. history路由  使用location.href  vuex数据会丢失
+    hash路由  使用location.href  vuex数据不会丢失
+    this.$router.replace   this.$router.push  this.$router.go  this.$router.back  vuex数据都不会丢失
 总结: 只有路由模式是history 且用location.href跳转路由的时候 store会丢
+
 补充: 组件懒加载的三种方式的效果一样 : 都是加载组件的时候才加载对应的依赖js 切换回之前的tab js有缓存 不会重新加载
 
 ========================vuex

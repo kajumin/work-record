@@ -1,0 +1,12 @@
+#开发环境(测试服务器)接口地址
+VUE_APP_BASE_URL='http://gateway.api.dev.feibaos.cn'
+#跳转登录地址
+VUE_APP_LOGIN_URL = 'http://oss.login.dev.feibaos.cn'
+VUE_APP_BASE_LCA='.enterprise.web.dev.feibaos.cn'
+VUE_APP_HREF='http://platform.web.dev.feibaos.cn'
+# 商品id
+VUE_APP_GID = '60e7ae170036a159e4a782b7'
+VUE_APP_AGENT_APP_TYPE_ID = '61d5745774ace65e040bb512'
+VUE_APP_SAAS_APP_TYPE_ID = '60a3a9740036a159e4f8cb96'
+VUE_APP_PLATFORM_APP_ID = 'tenant'
+VUE_APP_PLATFORM_TYPE = 'front'

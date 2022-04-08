@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      .app2 {
+        /* position: relative; */
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+      }
+      .app2 .app2-son {
+        height: 1000px;
+        background-color: red;
+      }
+      .app2 .app2-ab {
+        position: absolute;
+        /* top: 0; */
+        width: 10px;
+        height: 10px;
+        background-color: aqua;
+      }
+
+      .app3 {
+        width: 300px;
+        height: 200px;
+        background-color: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+      }
+      .app3 .app3-son {
+        position: relative;
+        overflow: auto;
+        flex: 1;
+        background: pink;
+      }
+      .app3 .app3-son .app3-ab {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background-color: rgb(34, 29, 29);
+      }
+      .app3 .app3-son-son {
+        height: 1000px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app2">
+      <div class="app2-ab"></div>
+      <div class="app2-son"></div>
+    </div>
+
+    <div class="app3">
+      <div style="height: 50px;background-color: red;"></div>
+      <div class="app3-son">
+        <div class="app3-ab"></div>
+        <div class="app3-son-son"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 博雅网络游戏开发（深圳）有限公司    //有商标 版权 作品
-
+====七牛云
+QINIU_ACCESS_KEY=AySqDg4cCOdjOHqI9VtGoF8Iqca2cCIqoarRVjvf
+QINIU_SECRET_KEY=bTO46bmjKeVgL21phTS89ZhiLO4tvZ6sOXElBskZ
 ===pdf资源
 http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf
 https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相关政策汇编-2021.pdf
@@ -9,9 +11,11 @@ https://photo.feibaos.cn/webs/saas/uploads/property/知识产权质押融资相�
 =======测试地址
 开放平台后台: http://admin.platform.web.dev.feibaos.cn
 开放平台pc: http://platform.web.dev.feibaos.cn
-开放平台h5:  platform.h5.dev.feibaos.cn 
+开放平台h5:  https://platform.h5.dev.feibaos.cn 
 saas pc:  http://test.enterprise.web.dev.feibaos.cn/ 
-              http://srcm.enterprise.web.dev.feibaos.cn/
+              http://urvtty.enterprise.web.dev.feibaos.cn/
+              http://devkiekiang.enterprise.web.dev.feibaos.cn
+              http://hyjray.enterprise.web.dev.feibaos.cn/
 单点登录: http://oss.login.dev.feibaos.cn/login  http://oss.web.eipchain.com/login
 机构版: http://srcm.agency.web.dev.feibaos.cn
 ================正式地址
@@ -27,7 +31,18 @@ http://localhost:8080/applet?path=%2Fpages%2Fhome%2Findex&app_type_code=fm
 微信: wxed0f7afdd3e062b8      5a2e7925579ce57cba5aef65a05db14b
 抖音: ttdb5cade144651cb401    c2a1a061a89285fc02214dd29d753db00ec3cc19
 
-https://platform.web.dev.feibaos.cn
 
-https://h5.eipchain.com
-https://platform.h5.dev.feibaos.cn
+机构版注册完成之后就过期了
+
+saas
+竞对企业: 
+1.统计问题
+我的专利
+1.首页跳转进来问题
+2.标记状态问题
+
+消息提醒
+1.word字段搜索
+
+
+

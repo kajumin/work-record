@@ -1,0 +1,9 @@
+# 开发环境域名变量
+NODE_ENV = 'development'
+VUE_APP_BASE_URL = 'http://gateway.api.dev.feibaos.cn'
+VUE_APP_LOGIN_URL = 'http://oss.login.dev.feibaos.cn'
+# 默认域名
+VUE_APP_BASE_LCA = '.enterprise.web.dev.feibaos.cn'
+# 开发专用
+VUE_APP_HREF = 'http://admin.platform.web.dev.feibaos.cn'
+VUE_APP_PLATFORM_TYPE = 'admin'
